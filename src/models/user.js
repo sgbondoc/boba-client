@@ -19,4 +19,12 @@ export default class UserModel {
          })
          return await response.json()
      }
+     static async logout() {
+        // remember to add "credentials: include"
+       const response = await fetch(`${REACT_APP_API_URL}/auth/logout`, {
+             method: "DELETE",
+             credentials: "include",
+         })
+         return await response.json()
+      }
 }

@@ -3,8 +3,9 @@ import { withRouter } from 'react-router-dom'
 import Header from './components/Header'
 import Routes from './config/routes'
 import './App.css'
+import UserModel from './models/user'
 
-function App() {
+function App (props) {
   const [currentUser, setCurrentUser] = useState(localStorage.getItem('uid'))
 
   const storeUser = (userId) => {
@@ -12,10 +13,22 @@ function App() {
     localStorage.setItem('uid', userId)
   }
 
+  const logout = (event) => {
+    event.preventDefault()
+    localStorage.removeItem('uid')
+    UserModel.logout()
+      .then(response => {
+        console.log(response)
+        setCurrentUser(null)
+        props.history.push('/login')
+      })
+  }
+
   return (
     <div className="App">
       <Header
         currentUser={ currentUser }
+        logout={ logout }
       />
       <Routes
         currentUser={ currentUser }
