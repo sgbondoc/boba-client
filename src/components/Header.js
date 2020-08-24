@@ -13,6 +13,7 @@ const Header = (props) => {
                     { props.currentUser ?
                         <>
                             <li><Link to={ '/ratings' }>See All Ratings</Link></li>
+                            <li><Link to={ '/ratings/new' }>Add Rating</Link></li>
                             <li><Link to={ '/profile' }>Profile</Link></li>
                             <li><a href="/logout" onClick={ props.logout }>Log Out</a></li>
                         </>
