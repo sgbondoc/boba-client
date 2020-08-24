@@ -2,6 +2,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import Home from '../pages/Home'
+import RatingList from '../pages/RatingList'
 
 // imports for auth
 import Profile from '../pages/Profile'
@@ -11,6 +12,7 @@ import Register from '../pages/Register'
 export default (props) => (
     <Switch>
         <Route exact path='/' component={ Home } />
+        <Route path='/ratings' component={ RatingList }/>
         <Route path='/profile' component={ Profile }/>
         <Route path='/register' component={ Register }/>
         <Route path='/login' render={ (routeComponentProps) => {
