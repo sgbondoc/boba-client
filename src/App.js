@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { withRouter } from 'react-router-dom'
-import Header from './components/Header'
 import Routes from './config/routes'
+import Header from './components/Header'
 import UserModel from './models/user'
 import './App.css'
 
@@ -32,7 +32,7 @@ function App (props) {
       />
       <Routes
         currentUser={ currentUser }
-        storeUser={ storeUser}
+        storeUser={ storeUser }
       />
     </div>
   )

@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import Home from '../pages/Home'
 import RatingList from '../pages/RatingList'
+import RatingShow from '../pages/RatingShow'
 
 // imports for auth
 import Profile from '../pages/Profile'
@@ -12,6 +13,7 @@ import Register from '../pages/Register'
 export default (props) => (
     <Switch>
         <Route exact path='/' component={ Home } />
+        <Route path='/ratings/:id' component={ RatingShow }/>
         <Route path='/ratings' component={ RatingList }/>
         <Route path='/profile' component={ Profile }/>
         <Route path='/register' component={ Register }/>

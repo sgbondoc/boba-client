@@ -1,5 +1,4 @@
 import React from 'react'
-import RatingList from '../pages/RatingList'
 
 const RatingTile = (props) => {
     return (
