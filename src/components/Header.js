@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom'
 const Header = (props) => {
     return (
         <header>
+            <div className="logo">
+                <Link to={'/'}>Home</Link>
+            </div>
+            
             <div className="links">
                 <ul>
                     { props.currentUser ?
