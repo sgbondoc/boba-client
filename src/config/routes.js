@@ -1,15 +1,23 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
+import Home from '../pages/Home'
+
 // imports for auth
 import Profile from '../pages/Profile'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
 
-export default (props) => {
+export default (props) => (
     <Switch>
+        <Route exact path='/' component={ Home } />
         <Route path='/profile' component={ Profile }/>
         <Route path='/register' component={ Register }/>
-        <Route path='/login' component={ Login }/>
+        <Route path='/login' render={ (routeComponentProps) => {
+            return <Login
+                        { ...routeComponentProps }
+                        storeUser={ props.storeUser }
+                    />
+        }}/>
     </Switch>
-}
+)

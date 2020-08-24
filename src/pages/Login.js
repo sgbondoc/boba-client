@@ -16,6 +16,7 @@ class Login extends Component {
         UserModel.login(this.state)
         .then(data => {
             console.log(data)
+            // TODO: FIX IT (reload page, reload component, message to let user know)
             if (!data.user) {
                 return false
             }
