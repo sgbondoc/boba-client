@@ -61,18 +61,20 @@ class BobaList extends Component {
                 // </div>
                 // </>
 
-                <div className="business-info" key={ result.id }>
-                    <Card style={{ width: '18rem'}}>
-                        <CardImg top width="100%" src={ result.image_url } alt="Boba Business"/>
-                        <CardBody>
-                            <CardTitle>{ result.name }</CardTitle>
-                            <CardSubtitle>{result.location.display_address[0]},{" "} 
-                                {result.location.display_address[1]}</CardSubtitle>
-                            <CardText>Rating:</CardText>
-                            <Button>View on Yelp</Button>
-                        </CardBody>
-                    </Card>
-                </div>
+                <div class="card-container">
+                    <div className="business-info" key={ result.id }>
+                        <Card style={{ width: '18rem'}}>
+                            <CardImg top width="100%" src={ result.image_url } alt="Boba Business"/>
+                            <CardBody>
+                                <CardTitle>{ result.name }</CardTitle>
+                                <CardSubtitle>{result.location.display_address[0]},{" "} 
+                                    {result.location.display_address[1]}</CardSubtitle>
+                                <CardText>Rating:</CardText>
+                                <Button>View on Yelp</Button>
+                            </CardBody>
+                        </Card>
+                    </div>
+                </div>    
             )
         })
         return (
@@ -82,12 +84,12 @@ class BobaList extends Component {
 
     render () {
         return (
-            <section className="business-list">
+            <div className="business-container">
                 { this.state.results.length ? this.renderBusinessInfo() : this.renderEmptyState}
                 { !!this.state.errorState && 
                     <h1>{ this.state.error }</h1>
                 }
-            </section>
+            </div>
         )
     }
 }

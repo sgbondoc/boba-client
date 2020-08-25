@@ -33,10 +33,10 @@ class SearchForm extends Component {
                         {' '} */}
                         <FormGroup>  
                             <Input
-                                className="w-200"
+                                className="search-form-input"
                                 type="text"
                                 id="location"
-                                placeholder="address, city, or zip code"
+                                placeholder="Location"
                                 value={ this.state.searchLocationQuery }
                                 onChange={ this.handleChange }>
                             </Input>
