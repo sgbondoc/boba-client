@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import {
+    Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button
+  } from 'reactstrap';
 
 class BobaList extends Component {
     state = {
@@ -50,12 +54,25 @@ class BobaList extends Component {
     renderBusinessInfo = () => {
         let BusinessList = this.state.results.map((result) => {
             return (
-                <>
-                <div className="business-info" key={ result.id }></div>
-                <div>
-                    <h4 className="business-info-name">{result.name}</h4>
+                // <>
+                // <div className="business-info" key={ result.id }></div>
+                // <div>
+                //     <h4 className="business-info-name">{result.name}</h4>
+                // </div>
+                // </>
+
+                <div className="business-info" key={ result.id }>
+                    <Card style={{ width: '18rem'}}>
+                        <CardImg top width="100%" src={ result.image_url } alt="Boba Business"/>
+                        <CardBody>
+                            <CardTitle>{ result.name }</CardTitle>
+                            <CardSubtitle>{result.location.display_address[0]},{" "} 
+                                {result.location.display_address[1]}</CardSubtitle>
+                            <CardText>Rating:</CardText>
+                            <Button>View on Yelp</Button>
+                        </CardBody>
+                    </Card>
                 </div>
-                </>
             )
         })
         return (
