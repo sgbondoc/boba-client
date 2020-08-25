@@ -1,16 +1,24 @@
 import React, { Component } from 'react'
 import UserModel from '../models/user'
+import {
+    Container, Col, Form,
+    FormGroup, Label, Input,
+    Button,
+} from 'reactstrap';
+import '../index.css'
 
 class Login extends Component {
     state = {
         email: "",
         password: ""
     }
+
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         })
     }
+
     handleSubmit = (event) => {
         event.preventDefault()
         UserModel.login(this.state)
@@ -28,37 +36,44 @@ class Login extends Component {
 
     render() {
         return (
-            <div>
+            <Container className="Login">
                 <h4>Login</h4>
-
                 <form onSubmit={ this.handleSubmit }>
-
-                    <div className="login-form-group">
-                        <label htmlFor="name">Email</label>
-                        <input
-                            onChange={ this.handleChange }
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={ this.state.email }
-                        />
-                    </div>
-
-                    <div className="login-form-group">
-                        <label htmlFor="password">Password</label>
-                        <input
-                            onChange={ this.handleChange }
-                            type="password"
-                            id="password"
-                            name="password"
-                            value={ this.state.password }
-                        />
-                    </div>
-
-                    <button type="submit">Login</button>
-
+                    <Form className="form">
+                        <Col>
+                            <FormGroup>
+                                <div className="login-form-group">
+                                    <Label for="email" hidden>Email</Label>
+                                    <Input
+                                        onChange={ this.handleChange }
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="Email"
+                                        value={ this.state.email }
+                                    />
+                                </div>
+                            </FormGroup>
+                        </Col>
+                        <Col>
+                            <FormGroup> 
+                                <div className="login-form-group">
+                                    <Label for="password" hidden>Password</Label>
+                                    <Input
+                                        onChange={ this.handleChange }
+                                        type="password"
+                                        id="password"
+                                        name="password"
+                                        placeholder="Password"
+                                        value={ this.state.password }
+                                    />
+                                </div>
+                            </FormGroup>
+                        </Col>
+                        <Button type="submit">Submit</Button>
+                    </Form>
                 </form>
-            </div>
+            </Container>
         )
     }
 }
