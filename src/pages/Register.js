@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
 import UserModel from '../models/user'
+import {
+    Container, Col, Form,
+    FormGroup, Label,
+    Button,
+} from 'reactstrap';
+import '../index.css'
 
 class Register extends Component {
     state = {
@@ -30,59 +36,74 @@ class Register extends Component {
     }
     render() {
         return (
-            <div>
+            <Container className="Register">
                 <h4>Register</h4>
-                
                 <form onSubmit={ this.handleSubmit }>
-                
-                    <div className="register-form-group">
-                        <label htmlFor="name">Name</label>
-                        <input
-                            onChange={ this.handleChange }
-                            type="text"
-                            id="name"
-                            name="name"
-                            value={ this.state.name }
-                        />
-                    </div>
-
-                    <div className="register-form-group">
-                        <label htmlFor="name">Email</label>
-                        <input
-                            onChange={ this.handleChange }
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={ this.state.email }
-                        />
-                    </div>
-
-                    <div className="register-form-group">
-                        <label htmlFor="name">Password</label>
-                        <input
-                            onChange={ this.handleChange }
-                            type="password"
-                            id="password"
-                            name="password"
-                            value={ this.state.password }
-                        />
-                    </div>
-
-                    <div className="register-form-group">
-                        <label htmlFor="password2">Confirm Password</label>
-                        <input
-                            onChange={ this.handleChange }
-                            type="password"
-                            id="password2"
-                            name="password2"
-                            value={ this.state.password2 }
-                        />
-                    </div>
-
-                    <button type="submit">Register</button>
-
+                    <Form className="form">
+                        <Col>
+                            <FormGroup>
+                                <div className="register-form-group">
+                                    <Label for="name" hidden>Name</Label>
+                                    <input
+                                        onChange={ this.handleChange }
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Name"
+                                        value={ this.state.name }
+                                    />
+                                </div>
+                            </FormGroup>
+                        </Col>
+                        <Col>
+                            <FormGroup>
+                                <div className="register-form-group">
+                                    <Label htmlFor="name" hidden>Email</Label>
+                                    <input
+                                        onChange={ this.handleChange }
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="Email"
+                                        value={ this.state.email }
+                                    />
+                                </div>
+                            </FormGroup>
+                        </Col>
+                        <Col>
+                            <FormGroup>
+                                <div className="register-form-group">
+                                    <Label htmlFor="name" hidden>Password</Label>
+                                    <input
+                                        onChange={ this.handleChange }
+                                        type="password"
+                                        id="password"
+                                        name="password"
+                                        placeholder="Password"
+                                        value={ this.state.password }
+                                    />
+                                </div>
+                            </FormGroup>
+                        </Col>
+                        <Col>
+                            <FormGroup>
+                                <div className="register-form-group">
+                                    <Label htmlFor="password2" hidden>Confirm Password</Label>
+                                    <input
+                                        onChange={ this.handleChange }
+                                        type="password"
+                                        id="password2"
+                                        name="password2"
+                                        placeholder="Confrim Password"
+                                        value={ this.state.password2 }
+                                    />
+                                </div>
+                            </FormGroup>
+                        </Col>
+                        <Button type="submit">Register</Button>     
+                    </Form>
                 </form>
-            </div>
+            </Container>
         )
     }
 }

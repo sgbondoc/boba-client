@@ -33,7 +33,7 @@ class SearchForm extends Component {
                         {' '} */}
                         <FormGroup>  
                             <Input
-                                className="search-form-input"
+                                className="w-200"
                                 type="text"
                                 id="location"
                                 placeholder="address, city, or zip code"

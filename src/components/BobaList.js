@@ -42,9 +42,9 @@ class BobaList extends Component {
     }
     renderEmptyState = () => {
         return (
-            <h2 className="header-message">
+            <h4 className="header-message">
                 "Working on getting your boba list!"
-            </h2>
+            </h4>
         )
     }
     renderBusinessInfo = () => {
@@ -53,7 +53,7 @@ class BobaList extends Component {
                 <>
                 <div className="business-info" key={ result.id }></div>
                 <div>
-                    <h2 className="business-info-name">{result.name}</h2>
+                    <h4 className="business-info-name">{result.name}</h4>
                 </div>
                 </>
             )

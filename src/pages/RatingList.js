@@ -28,7 +28,7 @@ class RatingList extends Component {
 
         return (
             <div>
-                <h1>Ratings</h1>
+                <h2>Ratings</h2>
                 { this.state.ratings ? ratingList : "Loading..."}
             </div>
         )

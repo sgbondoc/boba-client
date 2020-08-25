@@ -5,11 +5,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('images/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: fill;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+nav {
+ background-color: lavender;
+ box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+}
+
+h1, h2, h4 {
+  padding-top: 20px;
 }
 
 a {
@@ -26,8 +39,11 @@ ul {
 
 .form-inline {
   width: 700px;
-  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: auto;
+  padding-top: 20px;
 }
 
 .form {
