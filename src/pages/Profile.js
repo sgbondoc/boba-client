@@ -1,8 +1,11 @@
 import React from 'react'
 
-const Profile = () => {
+const Profile = (props) => {
     return (
-        <h1>Profile</h1>
+        <div className="profile">
+            <h1>Profile</h1>
+
+        </div>
     )
 }
 

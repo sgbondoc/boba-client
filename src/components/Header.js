@@ -4,14 +4,12 @@ import { Link } from 'react-router-dom'
 const Header = (props) => {
     return (
         <header>
-            <div className="logo">
-                <Link to={'/'}>Home</Link>
-            </div>
             
             <div className="links">
                 <ul>
                     { props.currentUser ?
                         <>
+                            <li><Link to={'/'}>Search</Link></li>
                             <li><Link to={ '/ratings' }>See All Ratings</Link></li>
                             <li><Link to={ '/ratings/new' }>Add Rating</Link></li>
                             <li><Link to={ '/profile' }>Profile</Link></li>
@@ -19,7 +17,6 @@ const Header = (props) => {
                         </>
                     :
                         <>
-                            <li><Link to={ '/ratings' }>See All Ratings</Link></li>
                             <li><Link to={ '/register' }>Register</Link></li>
                             <li><Link to={ '/login' }>Login</Link></li>                
                         </>

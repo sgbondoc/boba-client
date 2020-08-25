@@ -19,6 +19,10 @@ class RatingModel {
         })
             .then(response => response.json())
     }
+    static update = (ratingId) => {
+        return fetch(`${url}/ratings/${ratingId}`)
+        .then(response => response.json())
+    }
 }
 
 export default RatingModel
