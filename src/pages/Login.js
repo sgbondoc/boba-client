@@ -21,7 +21,7 @@ class Login extends Component {
                 return false
             }
             this.props.storeUser(data.user)
-            this.props.history.push('/profile')
+            this.props.history.push('/ratings')
         })
         .catch(err => console.log(err))
     }

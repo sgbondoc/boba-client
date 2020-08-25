@@ -25,7 +25,7 @@ class Register extends Component {
                     password: "",
                     password2: ""
                 })
-                this.props.history.push('./login')
+                this.props.history.push('/login')
             })
     }
     render() {

@@ -6,6 +6,7 @@ import RatingList from '../pages/RatingList'
 import RatingShow from '../pages/RatingShow'
 import NewRating from '../pages/NewRating'
 import Search from '../pages/Search'
+import DrinkList from '../pages/DrinkList'
 
 // imports for auth
 import Profile from '../pages/Profile'
@@ -19,6 +20,7 @@ export default (props) => (
         <Route path='/ratings/:id' component={ RatingShow }/>
         <Route path='/ratings' component={ RatingList }/>
         <Route path='/search' component={ Search }/>
+        <Route path='/drinks' component={ DrinkList }/>
         <Route path='/profile' component={ Profile }/>
         <Route path='/register' component={ Register }/>
         <Route path='/login' render={ (routeComponentProps) => {

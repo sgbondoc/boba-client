@@ -16,6 +16,7 @@ const Header = (props) => {
                             <li><Link to={ '/search' }>Search</Link></li>
                             <li><Link to={ '/ratings' }>See All Ratings</Link></li>
                             <li><Link to={ '/ratings/new' }>Add Rating</Link></li>
+                            <li><Link to={ '/drinks' }>To Drink List</Link></li>
                             <li><Link to={ '/profile' }>Profile</Link></li>
                             <li><a href="/logout" onClick={ props.logout }>Log Out</a></li>
                         </>
