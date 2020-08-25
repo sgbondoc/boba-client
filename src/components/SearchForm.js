@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button } from 'reactstrap'
 
 class SearchForm extends Component {
     state = {
@@ -37,11 +38,11 @@ class SearchForm extends Component {
                         onChange={ this.handleChange }>
                     </input>
 
-                    <button
+                    <Button
                         className="search-form-button"
                         type="submit">
                         Search
-                    </button>
+                    </Button>
 
                 </form>
             </div>
