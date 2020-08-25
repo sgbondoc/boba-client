@@ -11,10 +11,10 @@ class BobaList extends Component {
         this.getBusinessesFromApi('San Francisco')
     }
     componentDidUpdate (prevProps, prevState) {
-        if (this.props.serachLocationQuery !== prevProps.serachLocationQuery) {
+        if (this.props.searchLocationQuery !== prevProps.searchLocationQuery) {
             this.setState({
                 results: [],
-            }, () => this.getBusinessesFromApi(this.props.serachLocationQuery))
+            }, () => this.getBusinessesFromApi(this.props.searchLocationQuery))
         }
     }
 
@@ -24,18 +24,16 @@ class BobaList extends Component {
     getBusinessesFromApi = (locationSearched) => {
         this.setState({ loading: true })
         axios.get(`${this.corsAnywhereUrl}${this.yelpSearchUrl}${locationSearched}`, {
-            headers: {
-                Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
-            },
-            params: {
-                categories: "bubbletea"
-            }
-        }).then((response) => {
+            headers: { Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`},
+            params: { categories: 'bubbletea' }
+        })
+        .then((response) => {
             console.log(response.data.businesses)
             this.setState({
                 results: response.data.businesses, loading: false
             })
-        }).catch((err) => {
+        })
+        .catch((err) => {
             this.setState({ 
                 errorState: "Sorry there is no related information to the location you searched.",
                 loading: false
@@ -50,18 +48,18 @@ class BobaList extends Component {
         )
     }
     renderBusinessInfo = () => {
-        const BusinessList = this.state.results.map((result, index) => {
+        let BusinessList = this.state.results.map((result) => {
             return (
                 <>
-                <div className="business-info" key={ index }></div>
+                <div className="business-info" key={ result.id }></div>
                 <div>
-                    <h2 className="header-message RestaurantInfo__name">{result.name}</h2>
+                    <h2 className="business-info-name">{result.name}</h2>
                 </div>
                 </>
             )
         })
         return (
-            <div className="business-gallery">{ BobaList }</div>
+            <div className="business-gallery">{ BusinessList }</div>
         )
     }
 
