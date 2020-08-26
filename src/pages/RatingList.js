@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import RatingModel from '../models/rating'
-import RatingTile from '../components/RatingTile'
+import RatingCard from '../components/RatingCard'
 import { Card, ListGroup } from 'reactstrap'
 
 class RatingList extends Component {
@@ -21,55 +21,24 @@ class RatingList extends Component {
         })
     }
 
-    renderRatingInfo() {
-        let ratingList = this.state.ratings.map((rating) => {
+    render() {
+        let RatingList = this.state.ratings.map((rating, index) => {
             return (
-                <div className="rating-card-container">
-                    <div className="rating-info" key={ rating._id}>
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Header>{ rating.businessName }</Card.Header>
-                            <ListGroup variant="flush">
-                                <ListGroup.Item>Location: { rating.location }</ListGroup.Item>
-                                <ListGroup.Item>Drink: { rating.drink }</ListGroup.Item>
-                                <ListGroup.Item>Overall Rating: { rating.overallRating }</ListGroup.Item>
-                                <ListGroup.Item>Drinks Rating: { rating.drinksRating }</ListGroup.Item>
-                                <ListGroup.Item>Toppings Rating: { rating.toppingsRating }</ListGroup.Item>
-                                <ListGroup.Item>Snacks Rating: { rating.snacksRating }</ListGroup.Item>
-                                <ListGroup.Item>Service Rating: { rating.serviceRating }</ListGroup.Item>
-                                <ListGroup.Item>Rewards Program: { rating.rewardsProgram }</ListGroup.Item>
-                            </ListGroup>
-                        </Card>
-                    </div>
+                <div className="rating-container">
+                <Link to={`/ratings/${ rating._id }`} key={ index }>
+                    <RatingCard  {...rating} />
+                </Link>
                 </div>
             )
         })
 
         return (
-            <div className="rating-gallery">{ ratingList }</div>
-        )
-    }    
-
-    render() {
-        // let RatingList = this.state.ratings.map((rating, index) => {
-        //     return (
-        //         <Link to={`/ratings/${ rating._id }`} key={ index }>
-        //             <RatingTile  {...rating} />
-        //         </Link>
-        //     )
-        // })
-
-        // return (
-        //     <div>
-        //         <h2>Ratings</h2>
-        //         { this.state.ratings ? RatingList : "Loading..."}
-        //     </div>
-        // )
-
-        return (
-            <div className="rating-container">
-                { this.renderRatingInfo() }
-
+            <>
+            <h4>Ratings</h4>
+            <div className="rating-gallery">
+                { this.state.ratings ? RatingList : "Loading..."}
             </div>
+            </>
         )
     }
 }

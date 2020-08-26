@@ -4,7 +4,7 @@ import {
     Container, Col, Form,
     FormGroup, Label, Input,
     Button,
-} from 'reactstrap';
+} from 'reactstrap'
 import '../index.css'
 
 class Login extends Component {

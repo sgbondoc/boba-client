@@ -40,7 +40,8 @@ class BobaList extends Component {
         .then((response) => {
             console.log(response.data.businesses)
             this.setState({
-                results: response.data.businesses, loading: false
+                results: response.data.businesses, 
+                loading: false
             })
         })
         .catch((err) => {
@@ -60,7 +61,7 @@ class BobaList extends Component {
     }
 
     renderBusinessInfo = () => {
-        let businessList = this.state.results.map((result) => {
+        let BusinessList = this.state.results.map((result) => {
             return (
                 <div className="card-container">
                     <div className="business-info" key={ result.id }>
@@ -80,7 +81,7 @@ class BobaList extends Component {
         })
         
         return (
-            <div className="business-gallery">{ businessList }</div>
+            <div className="business-gallery">{ BusinessList }</div>
         )
     }
 

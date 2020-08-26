@@ -29,7 +29,14 @@ h1, h2, h4 {
 
 a {
   text-decoration: none;
+  color: black;
 }
+
+a:hover {
+  text-decoration: none;
+  color: grey;
+}
+
 
 ul {
   list-style: none;
@@ -51,7 +58,8 @@ ul {
   margin: auto;
 }
 
-.business-gallery {
+.business-gallery, 
+.rating-gallery {
   /* width: 700px; */
   display: flex;
   justify-content: center;
@@ -60,9 +68,19 @@ ul {
   flex-wrap: wrap;
 }
 
-.card-container {
+.card-container,
+.rating-container {
   padding: 15px;
 }
+
+.rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+
 
 /* img.card-img-top {
   width: 318px;
