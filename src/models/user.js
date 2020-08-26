@@ -18,13 +18,17 @@ export default class UserModel {
             body: JSON.stringify(credentials)
          })
          return await response.json()
-     }
-     static async logout() {
-        // remember to add "credentials: include"
-       const response = await fetch(`${REACT_APP_API_URL}/auth/logout`, {
-             method: "DELETE",
-             credentials: "include",
-         })
-         return await response.json()
-      }
+    }
+    static async logout() {
+    // remember to add "credentials: include"
+    const response = await fetch(`${REACT_APP_API_URL}/auth/logout`, {
+            method: "DELETE",
+            credentials: "include",
+        })
+        return await response.json()
+    }
+    static show = (userId) => {
+        return fetch(`${REACT_APP_API_URL}/user/${userId}`)
+        .then(response => response.json())
+    }
 }

@@ -3,7 +3,7 @@ import RatingModel from '../models/rating'
 import {
     Container, Col, Form,
     FormGroup, Label,
-    Button,
+    Button, Input
 } from 'reactstrap'
 import '../index.css'
 
@@ -44,8 +44,8 @@ class NewRating extends Component {
                         <Col>
                             <FormGroup>
                                 <div className="rating-form-input">
-                                    <Label htmlFor="businessName" hidden>Business Name</Label>
-                                    <input
+                                    <Label for="businessName" hidden>Business Name</Label>
+                                    <Input
                                         type="text"
                                         name="businessName"
                                         placeholder="Business Name"
@@ -58,8 +58,8 @@ class NewRating extends Component {
                         <Col>
                             <FormGroup>      
                                 <div className="rating-form-input">
-                                    <Label htmlFor="location" hidden>Location</Label>
-                                    <input
+                                    <Label for="location" hidden>Location</Label>
+                                    <Input
                                         type="text"
                                         name="location"
                                         placeholder="Location"
@@ -72,8 +72,8 @@ class NewRating extends Component {
                         <Col>
                             <FormGroup> 
                                 <div className="rating-form-input">
-                                    <Label htmlFor="drink" hidden>Drink</Label>
-                                    <input
+                                    <Label for="drink" hidden>Drink</Label>
+                                    <Input
                                         type="text"
                                         name="drink"
                                         placeholder="Drink"
@@ -86,8 +86,8 @@ class NewRating extends Component {
                         <Col>
                             <FormGroup> 
                                 <div className="rating-form-input">
-                                    <Label htmlFor="overallRating" hidden>Overall Rating</Label>
-                                    <input
+                                    <Label for="overallRating" hidden>Overall Rating</Label>
+                                    <Input
                                         type="number"
                                         name="overallRating"
                                         placeholder="Overall Rating"
@@ -100,8 +100,8 @@ class NewRating extends Component {
                         <Col>
                             <FormGroup> 
                                 <div className="rating-form-input">
-                                    <Label htmlFor="drinksRating" hidden>Drinks Rating</Label>
-                                    <input
+                                    <Label for="drinksRating" hidden>Drinks Rating</Label>
+                                    <Input
                                         type="number"
                                         name="drinksRating"
                                         placeholder="Drinks Rating"
@@ -114,8 +114,8 @@ class NewRating extends Component {
                         <Col>
                             <FormGroup> 
                                 <div className="rating-form-input">
-                                    <Label htmlFor="toppingsRating" hidden>Toppings Rating</Label>
-                                    <input
+                                    <Label for="toppingsRating" hidden>Toppings Rating</Label>
+                                    <Input
                                         type="number"
                                         name="toppingsRating"
                                         placeholder="Toppings Rating"
@@ -128,8 +128,8 @@ class NewRating extends Component {
                         <Col>
                             <FormGroup> 
                                 <div className="rating-form-input">
-                                    <Label htmlFor="snacksRating" hidden>Snacks Rating</Label>
-                                    <input
+                                    <Label for="snacksRating" hidden>Snacks Rating</Label>
+                                    <Input
                                         type="number"
                                         name="snacksRating"
                                         placeholder="Snacks Rating"
@@ -142,8 +142,8 @@ class NewRating extends Component {
                         <Col>
                             <FormGroup> 
                                 <div className="rating-form-input">
-                                    <Label htmlFor="serviceRating" hidden>Service Rating</Label>
-                                    <input
+                                    <Label for="serviceRating" hidden>Service Rating</Label>
+                                    <Input
                                         type="number"
                                         name="serviceRating"
                                         placeholder="Service Rating"
@@ -156,13 +156,15 @@ class NewRating extends Component {
                         <Col>
                             <FormGroup> 
                                 <div className="rating-form-input">
-                                    <Label htmlFor="rewardsProgram">Rewards Program</Label>
-                                    <input 
+                                    <Label check>
+                                    <Input 
                                         type="checkbox" 
                                         id="completed" 
                                         checked={this.state.rewardsProgam} 
                                         onChange={this.handleChange} 
-                                    />
+                                    />{ " " }
+                                    Rewards Program
+                                    </Label>
                                 </div>
                             </FormGroup>
                         </Col>

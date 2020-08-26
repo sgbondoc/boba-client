@@ -2,8 +2,8 @@ import React from "react"
 import { motion } from "framer-motion"
 
 const loadingContainer = {
-  width: "5rem",
-  height: "5rem",
+  width: "6rem",
+  height: "6rem",
   display: "flex",
   justifyContent: "space-around"
 };
@@ -57,7 +57,7 @@ export default function Dots() {
           variants={loadingCircleVariants}
           transition={loadingCircleTransition}
         />
-        {/* <motion.span
+        <motion.span
           style={loadingCircle}
           variants={loadingCircleVariants}
           transition={loadingCircleTransition}
@@ -66,7 +66,7 @@ export default function Dots() {
           style={loadingCircle}
           variants={loadingCircleVariants}
           transition={loadingCircleTransition}
-        /> */}
+        />
       </motion.div>
     );
   }

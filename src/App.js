@@ -35,13 +35,13 @@ function App (props) {
         currentUser={ currentUser }
         storeUser={ storeUser }
       />
-      <Grid>
+      {/* <Grid>
         <Dots />
         <Dots />
         <Dots />
         <Dots />
         <Dots />
-      </Grid>
+      </Grid> */}
     </div>
   )
 }

@@ -5,7 +5,6 @@ import {
     FormGroup, Label, Input,
     Button,
 } from 'reactstrap'
-import '../index.css'
 
 class Login extends Component {
     state = {
@@ -29,6 +28,7 @@ class Login extends Component {
                 return false
             }
             this.props.storeUser(data.user)
+            console.log(data.user)
             this.props.history.push('/ratings')
         })
         .catch(err => console.log(err))

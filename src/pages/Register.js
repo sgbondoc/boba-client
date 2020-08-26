@@ -3,7 +3,7 @@ import UserModel from '../models/user'
 import {
     Container, Col, Form,
     FormGroup, Label,
-    Button,
+    Button, Input
 } from 'reactstrap'
 import '../index.css'
 
@@ -44,7 +44,7 @@ class Register extends Component {
                             <FormGroup>
                                 <div className="register-form-group">
                                     <Label for="name" hidden>Name</Label>
-                                    <input
+                                    <Input
                                         onChange={ this.handleChange }
                                         type="text"
                                         id="name"
@@ -59,7 +59,7 @@ class Register extends Component {
                             <FormGroup>
                                 <div className="register-form-group">
                                     <Label htmlFor="name" hidden>Email</Label>
-                                    <input
+                                    <Input
                                         onChange={ this.handleChange }
                                         type="email"
                                         id="email"
@@ -74,7 +74,7 @@ class Register extends Component {
                             <FormGroup>
                                 <div className="register-form-group">
                                     <Label htmlFor="name" hidden>Password</Label>
-                                    <input
+                                    <Input
                                         onChange={ this.handleChange }
                                         type="password"
                                         id="password"
@@ -89,7 +89,7 @@ class Register extends Component {
                             <FormGroup>
                                 <div className="register-form-group">
                                     <Label htmlFor="password2" hidden>Confirm Password</Label>
-                                    <input
+                                    <Input
                                         onChange={ this.handleChange }
                                         type="password"
                                         id="password2"
