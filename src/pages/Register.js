@@ -4,7 +4,7 @@ import {
     Container, Col, Form,
     FormGroup, Label,
     Button,
-} from 'reactstrap';
+} from 'reactstrap'
 import '../index.css'
 
 class Register extends Component {
@@ -36,7 +36,7 @@ class Register extends Component {
     }
     render() {
         return (
-            <Container className="Register">
+            <Container className="register">
                 <h4>Register</h4>
                 <form onSubmit={ this.handleSubmit }>
                     <Form className="form">

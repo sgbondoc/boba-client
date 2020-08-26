@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
 import RatingModel from '../models/rating'
+import {
+    Container, Col, Form,
+    FormGroup, Label,
+    Button,
+} from 'reactstrap'
+import '../index.css'
 
 class NewRating extends Component {
     state = {
@@ -31,107 +37,139 @@ class NewRating extends Component {
 
     render() {
         return (
-            <div>
-
-                <h2>Add Rating</h2>
-
+            <Container className="new-rating">
+                <h4>Add Rating</h4>
                 <form onSubmit={ this.handleSubmit }>
-
-                    <div className="rating-form-input">
-                        <label htmlFor="businessName">Business Name</label>
-                        <input
-                            type="text"
-                            name="businessName"
-                            onChange={ this.handleChange }
-                            value={ this.state.businessName }
-                        />
-                    </div>
-
-                    <div className="rating-form-input">
-                        <label htmlFor="location">Location</label>
-                        <input
-                            type="text"
-                            name="location"
-                            onChange={ this.handleChange }
-                            value={ this.state.location }
-                        />
-                    </div>
-
-                    <div className="rating-form-input">
-                        <label htmlFor="drink">Drink</label>
-                        <input
-                            type="text"
-                            name="drink"
-                            onChange={ this.handleChange }
-                            value={ this.state.drink }
-                        />
-                    </div>
-
-                    <div className="rating-form-input">
-                        <label htmlFor="overallRating">Overall Rating</label>
-                        <input
-                            type="number"
-                            name="overallRating"
-                            onChange={ this.handleChange }
-                            value={ this.state.overallRating }
-                        />
-                    </div>
-
-                    <div className="rating-form-input">
-                        <label htmlFor="drinksRating">Drinks Rating</label>
-                        <input
-                            type="number"
-                            name="drinksRating"
-                            onChange={ this.handleChange }
-                            value={ this.state.drinksRating }
-                        />
-                    </div>
-
-                    <div className="rating-form-input">
-                        <label htmlFor="toppingsRating">Toppings Rating</label>
-                        <input
-                            type="number"
-                            name="toppingsRating"
-                            onChange={ this.handleChange }
-                            value={ this.state.toppingsRating }
-                        />
-                    </div>
-                    
-                    <div className="rating-form-input">
-                        <label htmlFor="snacksRating">Snacks Rating</label>
-                        <input
-                            type="number"
-                            name="snacksRating"
-                            onChange={ this.handleChange }
-                            value={ this.state.snacksRating }
-                        />
-                    </div>
-
-                    <div className="rating-form-input">
-                        <label htmlFor="serviceRating">Service Rating</label>
-                        <input
-                            type="number"
-                            name="serviceRating"
-                            onChange={ this.handleChange }
-                            value={ this.state.serviceRating }
-                        />
-                    </div>
-
-                    <div className="rating-form-input">
-                        <label htmlFor="rewardsProgram">Rewards Program</label>
-                        <input 
-                            type="checkbox" 
-                            id="completed" 
-                            checked={this.state.rewardsProgam} 
-                            onChange={this.handleChange} 
-                        />
-                    </div>
-
-                    <input type="submit" value="Save"/>
-
+                    <Form className="form">
+                        <Col>
+                            <FormGroup>
+                                <div className="rating-form-input">
+                                    <Label htmlFor="businessName" hidden>Business Name</Label>
+                                    <input
+                                        type="text"
+                                        name="businessName"
+                                        placeholder="Business Name"
+                                        onChange={ this.handleChange }
+                                        value={ this.state.businessName }
+                                    />
+                                </div>
+                            </FormGroup>
+                        </Col>
+                        <Col>
+                            <FormGroup>      
+                                <div className="rating-form-input">
+                                    <Label htmlFor="location" hidden>Location</Label>
+                                    <input
+                                        type="text"
+                                        name="location"
+                                        placeholder="Location"
+                                        onChange={ this.handleChange }
+                                        value={ this.state.location }
+                                    />
+                                </div>
+                            </FormGroup>
+                        </Col>
+                        <Col>
+                            <FormGroup> 
+                                <div className="rating-form-input">
+                                    <Label htmlFor="drink" hidden>Drink</Label>
+                                    <input
+                                        type="text"
+                                        name="drink"
+                                        placeholder="Drink"
+                                        onChange={ this.handleChange }
+                                        value={ this.state.drink }
+                                    />
+                                </div>
+                            </FormGroup>
+                        </Col>
+                        <Col>
+                            <FormGroup> 
+                                <div className="rating-form-input">
+                                    <Label htmlFor="overallRating" hidden>Overall Rating</Label>
+                                    <input
+                                        type="number"
+                                        name="overallRating"
+                                        placeholder="Overall Rating"
+                                        onChange={ this.handleChange }
+                                        value={ this.state.overallRating }
+                                    />
+                                </div>
+                            </FormGroup>
+                        </Col>
+                        <Col>
+                            <FormGroup> 
+                                <div className="rating-form-input">
+                                    <Label htmlFor="drinksRating" hidden>Drinks Rating</Label>
+                                    <input
+                                        type="number"
+                                        name="drinksRating"
+                                        placeholder="Drinks Rating"
+                                        onChange={ this.handleChange }
+                                        value={ this.state.drinksRating }
+                                    />
+                                </div>
+                            </FormGroup>
+                        </Col>
+                        <Col>
+                            <FormGroup> 
+                                <div className="rating-form-input">
+                                    <Label htmlFor="toppingsRating" hidden>Toppings Rating</Label>
+                                    <input
+                                        type="number"
+                                        name="toppingsRating"
+                                        placeholder="Toppings Rating"
+                                        onChange={ this.handleChange }
+                                        value={ this.state.toppingsRating }
+                                    />
+                                </div>
+                            </FormGroup>
+                        </Col>
+                        <Col>
+                            <FormGroup> 
+                                <div className="rating-form-input">
+                                    <Label htmlFor="snacksRating" hidden>Snacks Rating</Label>
+                                    <input
+                                        type="number"
+                                        name="snacksRating"
+                                        placeholder="Snacks Rating"
+                                        onChange={ this.handleChange }
+                                        value={ this.state.snacksRating }
+                                    />
+                                </div>
+                            </FormGroup>
+                        </Col>
+                        <Col>
+                            <FormGroup> 
+                                <div className="rating-form-input">
+                                    <Label htmlFor="serviceRating" hidden>Service Rating</Label>
+                                    <input
+                                        type="number"
+                                        name="serviceRating"
+                                        placeholder="Service Rating"
+                                        onChange={ this.handleChange }
+                                        value={ this.state.serviceRating }
+                                    />
+                                </div>
+                            </FormGroup>
+                        </Col>
+                        <Col>
+                            <FormGroup> 
+                                <div className="rating-form-input">
+                                    <Label htmlFor="rewardsProgram">Rewards Program</Label>
+                                    <input 
+                                        type="checkbox" 
+                                        id="completed" 
+                                        checked={this.state.rewardsProgam} 
+                                        onChange={this.handleChange} 
+                                    />
+                                </div>
+                            </FormGroup>
+                        </Col>
+                        <Button type="submit">Save</Button>
+                    </Form>
                 </form>
-
-            </div>
+            </Container>
         )
     }
 }
