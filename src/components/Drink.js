@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import DrinkForm from './DrinkForm'
 
 class Drink extends Component {
@@ -43,8 +43,8 @@ class Drink extends Component {
                     updateDrink={ this.props.updateDrink }
                     toggleBodyForm={ this.toggleBodyForm }/>
             </li>
-        );
-    };
-};
+        )
+    }
+}
 
 export default Drink;

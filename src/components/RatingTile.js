@@ -1,4 +1,5 @@
 import React from 'react'
+// import { Card, ListGroup } from 'reactstrap'
 
 const RatingTile = (props) => {
     return (
@@ -17,6 +18,22 @@ const RatingTile = (props) => {
             </ul>
             </>
         </div>
+
+        // <div className="rating-tile">
+        //     <Card style={{ width: '18rem' }}>
+        //         <Card.Header>{ props.businessName }</Card.Header>
+        //         <ListGroup variant="flush">
+        //             <ListGroup.Item>Location: { props.location }</ListGroup.Item>
+        //             <ListGroup.Item>Drink: { props.drink }</ListGroup.Item>
+        //             <ListGroup.Item>Overall Rating: { props.overallRating }</ListGroup.Item>
+        //             <ListGroup.Item>Drinks Rating: { props.drinksRating }</ListGroup.Item>
+        //             <ListGroup.Item>Toppings Rating: { props.toppingsRating }</ListGroup.Item>
+        //             <ListGroup.Item>Snacks Rating: { props.snacksRating }</ListGroup.Item>
+        //             <ListGroup.Item>Service Rating: { props.serviceRating }</ListGroup.Item>
+        //             <ListGroup.Item>Rewards Program: { props.rewardsProgram }</ListGroup.Item>
+        //         </ListGroup>
+        //     </Card>
+        // </div>
     )
 }
 

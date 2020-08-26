@@ -1,9 +1,10 @@
+// imports
 import React, { Component } from 'react'
 import axios from 'axios'
 import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
-  } from 'reactstrap';
+} from 'reactstrap'
 
 class BobaList extends Component {
     state = {
@@ -11,21 +12,26 @@ class BobaList extends Component {
         errorState: null,
         loading: false
     }
-    componentDidMount () {
-        this.getBusinessesFromApi('San Francisco')
+
+    componentDidMount() {
+        this.getBusinessList('San Francisco')
     }
+
     componentDidUpdate (prevProps, prevState) {
         if (this.props.searchLocationQuery !== prevProps.searchLocationQuery) {
             this.setState({
                 results: [],
-            }, () => this.getBusinessesFromApi(this.props.searchLocationQuery))
+            }, () => this.getBusinessList(this.props.searchLocationQuery))
         }
     }
 
+    // proxy server workaround for cors error with yelp api
     corsAnywhereUrl = "https://cors-anywhere.herokuapp.com/"
+    // search url for yelp api
     yelpSearchUrl = "https://api.yelp.com/v3/businesses/search?location="
 
-    getBusinessesFromApi = (locationSearched) => {
+    // request to yelp api based on location search and category endpoints
+    getBusinessList = (locationSearched) => {
         this.setState({ loading: true })
         axios.get(`${this.corsAnywhereUrl}${this.yelpSearchUrl}${locationSearched}`, {
             headers: { Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`},
@@ -44,6 +50,7 @@ class BobaList extends Component {
             })
         })
     }
+
     renderEmptyState = () => {
         return (
             <h4 className="header-message">
@@ -51,41 +58,36 @@ class BobaList extends Component {
             </h4>
         )
     }
-    renderBusinessInfo = () => {
-        let BusinessList = this.state.results.map((result) => {
-            return (
-                // <>
-                // <div className="business-info" key={ result.id }></div>
-                // <div>
-                //     <h4 className="business-info-name">{result.name}</h4>
-                // </div>
-                // </>
 
-                <div class="card-container">
+    renderBusinessInfo = () => {
+        let businessList = this.state.results.map((result) => {
+            return (
+                <div className="card-container">
                     <div className="business-info" key={ result.id }>
                         <Card style={{ width: '18rem'}}>
                             <CardImg top width="100%" src={ result.image_url } alt="Boba Business"/>
                             <CardBody>
                                 <CardTitle>{ result.name }</CardTitle>
-                                <CardSubtitle>{result.location.display_address[0]},{" "} 
-                                    {result.location.display_address[1]}</CardSubtitle>
-                                <CardText>Rating:</CardText>
-                                <Button>View on Yelp</Button>
+                                <CardSubtitle>{ result.location.display_address[0] },{" "} 
+                                    { result.location.display_address[1] }</CardSubtitle>
+                                <CardText>Yelp Rating: { result.rating } </CardText>
+                                <Button href={ result.url }>View on Yelp</Button>
                             </CardBody>
                         </Card>
                     </div>
                 </div>    
             )
         })
+        
         return (
-            <div className="business-gallery">{ BusinessList }</div>
+            <div className="business-gallery">{ businessList }</div>
         )
     }
 
     render () {
         return (
             <div className="business-container">
-                { this.state.results.length ? this.renderBusinessInfo() : this.renderEmptyState}
+                { this.state.results.length ? this.renderBusinessInfo() : this.renderEmptyState }
                 { !!this.state.errorState && 
                     <h1>{ this.state.error }</h1>
                 }

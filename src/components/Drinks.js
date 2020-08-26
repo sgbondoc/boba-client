@@ -1,5 +1,5 @@
-import React from 'react';
-import Drink from './Drink';
+import React from 'react'
+import Drink from './Drink'
 
 const Drinks = (props) => {
     let drinks = props.drinks.map((drink) => {
@@ -10,14 +10,14 @@ const Drinks = (props) => {
                 deleteDrink={ props.deleteDrink }
                 updateDrink={ props.updateDrink }
             />
-        );
-    });
+        )
+    })
 
     return (
         <ul>
             { drinks }
         </ul>
-    );
-};
+    )
+}
 
 export default Drinks
