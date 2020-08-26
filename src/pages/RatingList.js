@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import RatingModel from '../models/rating'
 import RatingCard from '../components/RatingCard'
-import { Card, ListGroup } from 'reactstrap'
 
 class RatingList extends Component {
     state = {
