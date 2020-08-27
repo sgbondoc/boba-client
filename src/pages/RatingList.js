@@ -23,6 +23,18 @@ class RatingList extends Component {
         })
     }
 
+    updateRating = (rating) => {
+        const isUpdatedRating = (r) => {
+            return r._id === this.rating._id
+        }
+
+        RatingModel.update(rating)
+            .then(data => {
+                let ratings = data.ratings
+                ratings.find(isUpdatedRating).body = rating.body
+            })
+    }    
+
     render() {
         let RatingList = this.state.ratings.map((rating, index) => {
             return (
@@ -52,6 +64,7 @@ class RatingList extends Component {
             <>
             <h4>Ratings</h4>
             <div className="rating-gallery">{ RatingList }</div>
+            {/* <RatingCard updateRating={ this.updateRating } /> */}
             </>
         )
 

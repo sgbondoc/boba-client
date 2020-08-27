@@ -17,6 +17,7 @@ class NewRating extends Component {
         snacksRating: "",
         serviceRating: "",
     }
+
     handleSubmit = (event) => {
         event.preventDefault()
         RatingModel.create(this.state)
@@ -24,6 +25,7 @@ class NewRating extends Component {
                 this.props.history.push('/ratings')
             })
     }
+    
     handleChange = (event) => {
         if (event.target.type !== "text") {
             this.setState({ compeleted: !this.state.completed })
