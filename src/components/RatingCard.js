@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardHeader, ListGroup, ListGroupItem } from 'reactstrap'
+import { Card, CardHeader, ListGroup, ListGroupItem, Button } from 'reactstrap'
 
 const RatingCard = (props) => {
     return (
@@ -14,7 +14,7 @@ const RatingCard = (props) => {
                     <ListGroupItem>Toppings Rating: { props.toppingsRating }</ListGroupItem>
                     <ListGroupItem>Snacks Rating: { props.snacksRating }</ListGroupItem>
                     <ListGroupItem>Service Rating: { props.serviceRating }</ListGroupItem>
-                    <ListGroupItem>Rewards Program: { props.rewardsProgram }</ListGroupItem>
+                    <Button href='/ratings/edit'>Update</Button>
                 </ListGroup>
             </Card>    
         </div>

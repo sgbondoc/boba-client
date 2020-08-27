@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import RatingModel from '../models/rating'
-import RatingCard from '../components/RatingCard'
+// import RatingCard from '../components/RatingCard'
+import {
+    Card, CardText, CardBody,
+    CardTitle, Button
+} from 'reactstrap'
 
 class RatingList extends Component {
     state = {
@@ -23,21 +27,52 @@ class RatingList extends Component {
         let RatingList = this.state.ratings.map((rating, index) => {
             return (
                 <div className="rating-container">
-                <Link to={`/ratings/${ rating._id }`} key={ index }>
-                    <RatingCard  {...rating} />
-                </Link>
-                </div>
+                    
+                    <div className="rating-info">
+                    <Link to={`/ratings/${ rating._id }`} key={ index }>
+                        <Card style={{ width: '18rem'}}>
+                            <CardBody>
+                                <CardTitle tag="h5">{ rating.businessName }</CardTitle>
+                                <CardText>{ rating.location }</CardText>
+                                <CardText>Overall Rating: { rating.overallRating }</CardText>
+                                <CardText>Drinks Rating: { rating.overallRating }</CardText>
+                                <CardText>Toppings Rating: { rating.overallRating }</CardText>
+                                <CardText>Snacks Rating: { rating.overallRating }</CardText>
+                                <CardText>Service Rating: { rating.overallRating }</CardText>
+                                <Button>Edit</Button>
+                            </CardBody>
+                        </Card>
+                    </Link>    
+                    </div>
+                </div>    
             )
         })
 
         return (
             <>
             <h4>Ratings</h4>
-            <div className="rating-gallery">
-                { this.state.ratings ? RatingList : "Loading..."}
-            </div>
+            <div className="rating-gallery">{ RatingList }</div>
             </>
         )
+
+        // let RatingList = this.state.ratings.map((rating, index) => {
+        //     return (
+        //         <div className="rating-container">
+        //         <Link to={`/ratings/${ rating._id }`} key={ index }>
+        //             <RatingCard  {...rating} />
+        //         </Link>
+        //         </div>
+        //     )
+        // })
+
+        // return (
+        //     <>
+        //     <h4>Ratings</h4>
+        //     <div className="rating-gallery">
+        //         { this.state.ratings ? RatingList : "Loading..."}
+        //     </div>
+        //     </>
+        // )
     }
 }
 

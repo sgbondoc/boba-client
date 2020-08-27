@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom'
 import Routes from './config/routes'
 import Header from './components/Header'
 import UserModel from './models/user'
-import Dots from './components/Dots'
+// import Dots from './components/Dots'
 import './App.css'
 
 function App (props) {
@@ -46,19 +46,19 @@ function App (props) {
   )
 }
 
-function Grid({ children }) {
-  return (
-    <div className="grid">
-      <LoadingBox>{children}</LoadingBox>
-    </div>
-  )
-}
+// function Grid({ children }) {
+//   return (
+//     <div className="grid">
+//       <LoadingBox>{children}</LoadingBox>
+//     </div>
+//   )
+// }
 
-function LoadingBox({ children }) {
-  return React.Children.map(children, child => {
-    return <div className="loading-box">{child}</div>;
-  })
-}
+// function LoadingBox({ children }) {
+//   return React.Children.map(children, child => {
+//     return <div className="loading-box">{child}</div>;
+//   })
+// }
 
 
 

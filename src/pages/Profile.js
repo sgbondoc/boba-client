@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import UserModel from '../models/user'
-import Login from './Login'
-import {
-    Container, Col, Form,
-    FormGroup, Label,
-    Button,
-} from 'reactstrap'
+// import UserModel from '../models/user'
+// import Login from './Login'
+// import {
+//     Container, Col, Form,
+//     FormGroup, Label,
+//     Button,
+// } from 'reactstrap'
 
 const Profile = (props) => {
     return (
