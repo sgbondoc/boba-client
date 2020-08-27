@@ -5,7 +5,6 @@ import {
     FormGroup, Label,
     Button, Input
 } from 'reactstrap'
-import '../index.css'
 
 class NewRating extends Component {
     state = {
@@ -17,7 +16,6 @@ class NewRating extends Component {
         toppingsRating: "",
         snacksRating: "",
         serviceRating: "",
-        rewardsProgam: false
     }
     handleSubmit = (event) => {
         event.preventDefault()
@@ -86,85 +84,91 @@ class NewRating extends Component {
                         <Col>
                             <FormGroup> 
                                 <div className="rating-form-input">
-                                    <Label for="overallRating" hidden>Overall Rating</Label>
+                                    <Label for="overallRating">Overall Rating</Label>
                                     <Input
-                                        type="number"
+                                        type="select"
                                         name="overallRating"
-                                        placeholder="Overall Rating"
                                         onChange={ this.handleChange }
-                                        value={ this.state.overallRating }
-                                    />
+                                        value={ this.state.overallRating }>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                    </Input>
                                 </div>
                             </FormGroup>
                         </Col>
                         <Col>
                             <FormGroup> 
                                 <div className="rating-form-input">
-                                    <Label for="drinksRating" hidden>Drinks Rating</Label>
+                                    <Label for="drinksRating">Drinks Rating</Label>
                                     <Input
-                                        type="number"
+                                        type="select"
                                         name="drinksRating"
                                         placeholder="Drinks Rating"
                                         onChange={ this.handleChange }
-                                        value={ this.state.drinksRating }
-                                    />
+                                        value={ this.state.drinksRating }>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                    </Input>
                                 </div>
                             </FormGroup>
                         </Col>
                         <Col>
                             <FormGroup> 
                                 <div className="rating-form-input">
-                                    <Label for="toppingsRating" hidden>Toppings Rating</Label>
+                                    <Label for="toppingsRating">Toppings Rating</Label>
                                     <Input
-                                        type="number"
+                                        type="select"
                                         name="toppingsRating"
-                                        placeholder="Toppings Rating"
                                         onChange={ this.handleChange }
-                                        value={ this.state.toppingsRating }
-                                    />
+                                        value={ this.state.toppingsRating }>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                    </Input>        
                                 </div>
                             </FormGroup>
                         </Col>
                         <Col>
                             <FormGroup> 
                                 <div className="rating-form-input">
-                                    <Label for="snacksRating" hidden>Snacks Rating</Label>
+                                    <Label for="snacksRating">Snacks Rating</Label>
                                     <Input
-                                        type="number"
+                                        type="select"
                                         name="snacksRating"
-                                        placeholder="Snacks Rating"
                                         onChange={ this.handleChange }
-                                        value={ this.state.snacksRating }
-                                    />
+                                        value={ this.state.snacksRating }>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                    </Input>        
                                 </div>
                             </FormGroup>
                         </Col>
                         <Col>
                             <FormGroup> 
                                 <div className="rating-form-input">
-                                    <Label for="serviceRating" hidden>Service Rating</Label>
+                                    <Label for="serviceRating">Service Rating</Label>
                                     <Input
-                                        type="number"
+                                        type="select"
                                         name="serviceRating"
-                                        placeholder="Service Rating"
                                         onChange={ this.handleChange }
-                                        value={ this.state.serviceRating }
-                                    />
-                                </div>
-                            </FormGroup>
-                        </Col>
-                        <Col>
-                            <FormGroup> 
-                                <div className="rating-form-input">
-                                    <Label check>
-                                    <Input 
-                                        type="checkbox" 
-                                        id="completed" 
-                                        checked={this.state.rewardsProgam} 
-                                        onChange={this.handleChange} 
-                                    />{ " " }
-                                    Rewards Program
-                                    </Label>
+                                        value={ this.state.serviceRating }>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                    </Input>        
                                 </div>
                             </FormGroup>
                         </Col>

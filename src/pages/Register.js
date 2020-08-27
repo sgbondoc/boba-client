@@ -5,7 +5,6 @@ import {
     FormGroup, Label,
     Button, Input
 } from 'reactstrap'
-import '../index.css'
 
 class Register extends Component {
     state = {
