@@ -1,27 +1,59 @@
 import axios from 'axios'
 
-const endPoint = `http://localhost:4000/api/v1`
+const url = `http://localhost:4000/api/v1`
 
 class DrinkModel {
     static all = () => {
-        let request = axios.get(`${endPoint}/drinks`);
+        let request = axios.get(`${url}/drinks`)
         return request;
     };    
     
     static create = (drink) => {
-        let request = axios.post(`${endPoint}/drinks`, drink)
+        let request = axios.post(`${url}/drinks`, drink)
         return request
     }
 
     static delete = (drink) => {
-        let request = axios.delete(`${endPoint}/${drink._id}`)
+        let request = axios.delete(`${url}/${drink._id}`)
         return request
     }
 
     static update = (drink) => {
-        let request = axios.put(`${endPoint}/${drink._id}`, drink)
+        let request = axios.put(`${url}/${drink._id}`, drink)
         return request
     }
-};
+}
 
-export default DrinkModel;
+// class DrinkModel {
+//     static all = () => {
+//         return fetch(`${url}/drinks`)
+//         .then(response => response.json())
+//         .then (data => {
+//             console.log(data)
+//         })    
+//         .catch(error => console.error(error))
+//     }    
+
+//     static show = (drinkId) => {
+//         return fetch(`${url}/drinks/${drinkId}`)
+//         .then(response => response.json())
+//     }
+
+//     static create = (drinkData) => {
+//         return fetch(`${url}/drinks`, {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify(drinkData)
+//         })
+//             .then(response => response.json())
+//     }
+
+//     static update = (drinkId) => {
+//         return fetch(`${url}/drinks/${drinkId}`)
+//         .then(response => response.json())
+//     }
+// }
+
+export default DrinkModel

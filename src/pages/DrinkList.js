@@ -7,20 +7,23 @@ class DrinkList extends Component {
     state = {
         drinks: []
     }
+
     componentDidMount() {
         this.fetchData()
     }
+
     fetchData = () => {
         DrinkModel.all().then((response) => {
             this.setState ({
                 drinks: response.data.drinks
             })
-        })
+            console.log(this.state.drinks)
+        })    
     }
+
     createDrink = (drink) => {
         let newDrink = {
-            body: drink,
-            completed: false
+            body: drink
         }
         DrinkModel.create(newDrink).then((response) => {
             let drinks = this.state.drinks
@@ -28,6 +31,7 @@ class DrinkList extends Component {
             this.setState({ drinks: drinks })
         })
     }
+
     deleteDrink = (drink) => {
         DrinkModel.delete(drink).then((response) => {
             let drinks = this.state.drinks.filter((drink) => {
@@ -36,6 +40,7 @@ class DrinkList extends Component {
             this.setState({drinks})
         })
     }
+
     updateDrink = (drink) => {
         const isUpdatedDrink = (t) => {
             return t._id === drink._id
@@ -64,4 +69,4 @@ class DrinkList extends Component {
     }
 }
 
-export default DrinkList;
+export default DrinkList

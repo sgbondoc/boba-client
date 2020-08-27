@@ -1,40 +1,51 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { Form, FormGroup, Input, Button } from 'reactstrap'
 
 class DrinksListForm extends Component {
     state = {
-        drink: ''
-    };
+        suggestedDrink: ""
+    }
 
-    onInputChange = (event) => {
+    handleChange = (event) => {
         this.setState({
-            drink: event.target.value
-        });
-    };
+            suggestedDrink: event.target.value
+        })
+    }
 
-    onFormSubmit = (event) => {
+    handleSubmit = (event) => {
         event.preventDefault()
-        let drink = this.state.drink
+        let drink = this.state.suggestedDrink
         this.props.createDrink(drink)
         this.setState({
-            drink: ''
-        });
-    };
+            suggestedDrink: ""
+        })
+    }
 
     render() {
         return (
-            <div>
-                <form onSubmit={ this.onFormSubmit } id="taskForm">
-                    <input
-                        onChange={ this.onInputChange }
-                        type="text" id="newItemDescription"
-                        placeholder="Drink suggestion..."
-                        value={ this.state.drink }
-                    />
-                    <button type="submit" id="addTask" className="btn">Add Drink</button>
+            <div className="drink-form"> 
+                <form onSubmit={ this.handleSubmit }>
+                    <Form inline>
+                        <FormGroup>
+                            <Input
+                                onChange={ this.handleChange }
+                                type="text" 
+                                id="drinkSuggestion"
+                                placeholder="Drink suggestion"
+                                value={ this.state.suggestedDrink }
+                            />
+                            <Button 
+                                type="submit" 
+                                id="addDrink" 
+                                className="btn">
+                                Add Drink
+                            </Button>
+                        </FormGroup>
+                    </Form>  
                 </form>
             </div>
-        );
-    };
-};
+        )
+    }
+}
 
 export default DrinksListForm

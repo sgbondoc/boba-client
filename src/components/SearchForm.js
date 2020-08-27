@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import { Button, Form, FormGroup, Input } from 'reactstrap'
 
 class SearchForm extends Component {
     state = {
@@ -22,15 +22,6 @@ class SearchForm extends Component {
             <div className="search-form"> 
                 <form onSubmit={ this.handleSubmit }>    
                     <Form inline>
-                        {/* <FormGroup>   
-                            <Label
-                                className="search-form-label"
-                                htmlFor="location"
-                                arialabel="enter address, city, or zip code">
-                                Find Boba
-                            </Label>
-                        </FormGroup>      
-                        {' '} */}
                         <FormGroup>  
                             <Input
                                 className="search-form-input"

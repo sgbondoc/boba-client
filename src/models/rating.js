@@ -5,10 +5,12 @@ class RatingModel {
         return fetch(`${url}/ratings`)
         .then(response => response.json())
     }
+
     static show = (ratingId) => {
         return fetch(`${url}/ratings/${ratingId}`)
         .then(response => response.json())
     }
+    
     static create = (ratingData) => {
         return fetch(`${url}/ratings`, {
             method: "POST",

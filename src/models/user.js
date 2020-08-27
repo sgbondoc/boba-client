@@ -27,8 +27,4 @@ export default class UserModel {
         })
         return await response.json()
     }
-    static show = (userId) => {
-        return fetch(`${REACT_APP_API_URL}/user/${userId}`)
-        .then(response => response.json())
-    }
 }

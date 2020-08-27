@@ -1,4 +1,3 @@
-// imports
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import RatingModel from '../models/rating'
