@@ -1,30 +1,4 @@
-// import axios from 'axios'
-
-// const url = `http://localhost:4000/api/v1`
-
-// class DrinkModel {
-//     static all = () => {
-//         let request = axios.get(`${url}/drinks`)
-//         return request;
-//     };    
-    
-//     static create = (drink) => {
-//         let request = axios.post(`${url}/drinks`, drink)
-//         return request
-//     }
-
-//     static delete = (drink) => {
-//         let request = axios.delete(`${url}/${drink._id}`)
-//         return request
-//     }
-
-//     static update = (drink) => {
-//         let request = axios.put(`${url}/${drink._id}`, drink)
-//         return request
-//     }
-// }
-
-const url = 'http://localhost:4000/api/v1'
+const url = 'process.env.REACT_APP_API_URL || http://localhost:4000/api/v1'
 
 class DrinkModel {
     static all = async () => {
