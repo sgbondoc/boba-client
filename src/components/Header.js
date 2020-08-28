@@ -21,7 +21,7 @@ const Header = (props) => {
                                     <NavLink href="/search">Search</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="/ratings">User Ratings</NavLink>
+                                    <NavLink href="/ratings">Boba Ratings</NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink href="/ratings/new">Add Rating</NavLink>

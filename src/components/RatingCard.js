@@ -34,11 +34,15 @@ class RatingCard extends Component {
         let rating = this.state
         console.log(rating, 'handleSubmit, rating')
 
-        RatingModel.update(this.props._id)
+        console.log(this.props, 'handleSubmit, this.props')
+        console.log(this.props._id, 'handleSubmit, this.props')
+
+        RatingModel.update(this.props._id, rating)
             .then(data => {
-                let ratings = data.ratings
-                console.log(ratings, 'data ratings')
-                ratings.find(this.props._id).body = rating.body
+                console.log(data)
+                let rating = data.rating
+                console.log(rating, 'data ratings')
+                
                 this.props.history.push('/ratings')
             })    
     }

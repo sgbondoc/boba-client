@@ -1,36 +1,36 @@
 const url = 'http://localhost:4000/api/v1'
-const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
 
 class RatingModel {
-    static all = () => {
-        return fetch(`${url}/ratings`)
-        .then(response => response.json())
+    static all = async () => {
+        const response = await fetch(`${url}/ratings`)
+        return await response.json()
     }
 
-    static show = (ratingId) => {
-        return fetch(`${url}/ratings/${ratingId}`)
-        .then(response => response.json())
+    static show = async (ratingId) => {
+        const response = await fetch(`${url}/ratings/${ratingId}`)
+        return await response.json()
     }
     
-    static create = (ratingData) => {
-        return fetch(`${url}/ratings`, {
+    static create = async (ratingData) => {
+        const response = await fetch(`${url}/ratings`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(ratingData)
         })
-            .then(response => response.json())
+        return await response.json()
     }
-    static update = (ratingId) => {
-        return fetch(`${url}/ratings/${ratingId}`, {
+
+    static update = async (ratingId, rating) => {
+        const response = await fetch(`${url}/ratings/${ratingId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(ratingId)
+            body: JSON.stringify(rating)
         })
-            .then(response => response.json())
+        return await response.json()
     }
 }
 

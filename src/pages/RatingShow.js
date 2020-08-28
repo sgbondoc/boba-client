@@ -18,22 +18,12 @@ class RatingShow extends Component {
         })
     }
 
-    // updateRating = (currentRating) => {
-    //     const isUpdatedRating = (t) => {
-    //         return t._id === currentRating._id
-    //     }
-    //     RatingModel.update(currentRating)
-    //         .then((response) => {
-    //             let rating = this.state.rating
-    //             RatingShow.find(isUpdatedRating).body = rating.body
-    //             this.setState({ rating: rating })
-    //         })
-    // }
-
     render() {
         return (
             <div>
-                <RatingCard {...this.state.rating}/>
+                <RatingCard 
+                {...this.props}
+                {...this.state.rating}/>
             </div>
         )
     }
