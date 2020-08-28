@@ -34,7 +34,7 @@ class BobaList extends Component {
     getBusinessList = (locationSearched) => {
         this.setState({ loading: true })
         axios.get(`${this.corsAnywhereUrl}${this.yelpSearchUrl}${locationSearched}`, {
-            headers: { Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`},
+            headers: { "Authorization": `Bearer ${process.env.REACT_APP_API_KEY}`},
             params: { categories: 'bubbletea' }
         })
         .then((response) => {
