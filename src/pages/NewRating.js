@@ -18,21 +18,18 @@ class NewRating extends Component {
         serviceRating: "",
     }
 
+    handleChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
     handleSubmit = (event) => {
         event.preventDefault()
         RatingModel.create(this.state)
             .then(data => {
                 this.props.history.push('/ratings')
             })
-    }
-    
-    handleChange = (event) => {
-        if (event.target.type !== "text") {
-            this.setState({ compeleted: !this.state.completed })
-        }
-        this.setState({
-            [event.target.name]: event.target.value
-        })
     }
 
     render() {

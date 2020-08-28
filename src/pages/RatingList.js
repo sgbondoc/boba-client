@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import RatingModel from '../models/rating'
 import FilterContainer from '../components/FilterContainer'
-
 import {
     Card, CardText, CardBody,
     CardTitle, Button

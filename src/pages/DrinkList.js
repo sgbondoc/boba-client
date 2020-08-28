@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import DrinkModel from '../models/drink'
-import DrinksListForm from '../components/DrinksListForm'
+import DrinkListForm from '../components/DrinkListForm'
 import {
     Card, CardText, CardBody,
     CardTitle, Button
@@ -11,29 +11,16 @@ class DrinkList extends Component {
         drinks: [],
         count: 1
     }
-s
+
     componentDidMount() {
         this.fetchData()
     }
 
     fetchData = () => {
-        DrinkModel.all().then((response) => {
-            this.setState ({
-                drinks: response.data.drinks
-            })
+        DrinkModel.all().then((data) => {
+            this.setState ({ drinks: data.drinks })
             console.log(this.state.drinks)
         })    
-    }
-
-    createDrink = (drink) => {
-        let newDrink = {
-            body: drink
-        }
-        DrinkModel.create(newDrink).then((response) => {
-            let drinks = this.state.drinks
-            drinks.push(response.data)
-            this.setState({ drinks: drinks })
-        })
     }
 
     increaseLikes = (event) => {
@@ -42,22 +29,6 @@ s
     }
 
     render () {
-        // let DrinksList = this.state.drinks.map((drink, index) => {
-        //         this.state.drinks.push(<DrinkCard />)
-        // })
-
-        // return (
-        //     <>
-        //     <h4>Drink Now</h4>
-        //     <div className="drinks">
-        //         <DrinksListForm
-        //             createDrink={ this.createDrink }
-        //         />
-        //     </div>    
-        //     <div className="drinks-gallery">{ DrinkList }</div>
-        //     </>
-        // )
-
         let DrinksList = this.state.drinks.map((drink, index) => {
             return (
                 <div className="drink-container">
@@ -78,9 +49,7 @@ s
             <>
             <h4>Drink Now</h4>
             <div className="drinks">
-                <DrinksListForm
-                    createDrink={ this.createDrink }
-                />
+                <DrinkListForm {...this.props}/>
             </div>    
             <div className="drinks-gallery">{ DrinksList }</div>
             </>

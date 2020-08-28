@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import DrinkModel from '../models/drink'
 import { Form, FormGroup, Input, Button } from 'reactstrap'
 
-class DrinksListForm extends Component {
+class DrinkListForm extends Component {
     state = {
-        drink: ""
+        drink: "",
+        drinks: []
     }
 
     handleChange = (event) => {
@@ -16,15 +17,14 @@ class DrinksListForm extends Component {
     }
 
     handleSubmit = (event) => {
-        event.preventDefault()
         console.log(this.state)
         DrinkModel.create(this.state)
             .then(data => {
-                this.state.history.push('/drinks')
+                this.props.history.push('/drinks')
             })
         this.setState({
             drink: ""
-        })
+        })    
     }
 
     render() {
@@ -36,7 +36,7 @@ class DrinksListForm extends Component {
                             <Input
                                 type="text" 
                                 id="drinkSuggestion"
-                                placeholder="Drink suggestion"
+                                placeholder="Suggest a drink..."
                                 onChange={ this.handleChange }
                                 value={ this.state.suggestedDrink }
                             />
@@ -54,4 +54,4 @@ class DrinksListForm extends Component {
     }
 }
 
-export default DrinksListForm
+export default DrinkListForm
