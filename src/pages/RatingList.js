@@ -26,9 +26,9 @@ class RatingList extends Component {
     render() {
         let RatingList = this.state.ratings.map((rating, index) => {
             return (
-                <div className="rating-container">
+                <div className="rating-container" key={ index }>
                     <div className="rating-info">
-                    <Link to={`/ratings/${ rating._id }`} key={ index }>
+                    <Link to={`/ratings/${ rating._id }`}>
                         <Card style={{ width: '18rem' }}>
                             <CardBody>
                                 <CardTitle tag="h5">{ rating.businessName }</CardTitle>
