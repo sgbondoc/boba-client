@@ -1,23 +1,29 @@
 import React, { Component } from 'react'
+import DrinkModel from '../models/drink'
 import { Form, FormGroup, Input, Button } from 'reactstrap'
 
 class DrinksListForm extends Component {
     state = {
-        suggestedDrink: ""
+        drink: ""
     }
 
     handleChange = (event) => {
         this.setState({
-            suggestedDrink: event.target.value
+            drink: event.target.value
         })
+        console.log(event.target.value)
+        console.log(this.state.drink)
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
-        let drink = this.state.suggestedDrink
-        this.props.createDrink(drink)
+        console.log(this.state)
+        DrinkModel.create(this.state)
+            .then(data => {
+                this.state.history.push('/drinks')
+            })
         this.setState({
-            suggestedDrink: ""
+            drink: ""
         })
     }
 
@@ -28,10 +34,10 @@ class DrinksListForm extends Component {
                     <Form inline>
                         <FormGroup>
                             <Input
-                                onChange={ this.handleChange }
                                 type="text" 
                                 id="drinkSuggestion"
                                 placeholder="Drink suggestion"
+                                onChange={ this.handleChange }
                                 value={ this.state.suggestedDrink }
                             />
                             <Button 

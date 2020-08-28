@@ -39,10 +39,9 @@ class RatingList extends Component {
         let RatingList = this.state.ratings.map((rating, index) => {
             return (
                 <div className="rating-container">
-                    
                     <div className="rating-info">
                     <Link to={`/ratings/${ rating._id }`} key={ index }>
-                        <Card style={{ width: '18rem'}}>
+                        <Card style={{ width: '18rem' }}>
                             <CardBody>
                                 <CardTitle tag="h5">{ rating.businessName }</CardTitle>
                                 <CardText>{ rating.location }</CardText>
