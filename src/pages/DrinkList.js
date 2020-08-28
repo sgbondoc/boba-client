@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import DrinkModel from '../models/drink'
-import DrinkCard from '../components/DrinkCard'
 import DrinksListForm from '../components/DrinksListForm'
 import {
     Card, CardText, CardBody,

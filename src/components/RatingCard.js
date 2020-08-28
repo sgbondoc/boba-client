@@ -25,32 +25,22 @@ class RatingCard extends Component {
         this.setState({
             [event.target.name]: event.target.value
         })
-        console.log(event.target.name)
-        console.log(event.target.value)
-        console.log(this.state)
     }
-
-    updateRating = (rating) => {
-        const isUpdatedRating = (r) => {
-            return r._id === this.rating._id
-        }
-
-        RatingModel.update(rating)
-            .then(data => {
-                let ratings = data.ratings
-                ratings.find(isUpdatedRating).body = rating.body
-            })
-    }    
 
     handleSubmit = (event) => {
         event.preventDefault()
-        console.log(this.state)
+        console.log(this.state, 'handleSubmit, this.state')
 
         let rating = this.state
-        console.log(rating)
-        this.state.updateRating(rating)
-        this.setState(rating)
-        this.props.history.push('/ratings')
+        console.log(rating, 'handleSubmit, rating')
+
+        RatingModel.update(this.props._id)
+            .then(data => {
+                let ratings = data.ratings
+                console.log(ratings, 'data ratings')
+                ratings.find(this.props._id).body = rating.body
+                this.props.history.push('/ratings')
+            })    
     }
 
     render() {
