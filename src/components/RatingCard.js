@@ -8,20 +8,21 @@ import {
 
 class RatingCard extends Component {
     state = {
-        businessName: "",
-        location: "",
-        drink: "",
-        overallRating: "",
-        drinksRating: "",
-        toppingsRating: "",
-        snacksRating: "",
-        serviceRating: "",
+        businessName: '',
+        location: '',
+        drink: '',
+        overallRating: '',
+        drinksRating: '',
+        toppingsRating: '',
+        snacksRating: '',
+        serviceRating: ''
     }
 
     handleChange = (event) => {
         if (event.target.type !== "text") {
             this.setState({ completed: !this.state.completed })
         }
+
         this.setState({
             [event.target.name]: event.target.value
         })
@@ -29,20 +30,9 @@ class RatingCard extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        console.log(this.state, 'handleSubmit, this.state')
-
         let rating = this.state
-        console.log(rating, 'handleSubmit, rating')
-
-        console.log(this.props, 'handleSubmit, this.props')
-        console.log(this.props._id, 'handleSubmit, this.props')
-
         RatingModel.update(this.props._id, rating)
             .then(data => {
-                // console.log(data)
-                // let rating = data.rating
-                console.log(rating, 'data ratings')
-                
                 this.props.history.push('/ratings')
             })    
     }
@@ -195,30 +185,3 @@ class RatingCard extends Component {
 }
 
 export default RatingCard
-
-
-// import React from 'react'
-// import { Card, CardHeader, ListGroup, ListGroupItem, Button } from 'reactstrap'
-
-// const RatingCard = (props) => {
-//     return (
-//         <div className="rating"> 
-//             <Card style={{ width: '18rem' }}>
-//                 <CardHeader tag="h5">{ props.businessName }</CardHeader>
-//                 <ListGroup variant="flush">
-//                     <ListGroupItem>Location: { props.location }</ListGroupItem>
-//                     <ListGroupItem>Drink: { props.drink }</ListGroupItem>
-//                     <ListGroupItem>Overall Rating: { props.overallRating }</ListGroupItem>
-//                     <ListGroupItem>Drinks Rating: { props.drinksRating }</ListGroupItem>
-//                     <ListGroupItem>Toppings Rating: { props.toppingsRating }</ListGroupItem>
-//                     <ListGroupItem>Snacks Rating: { props.snacksRating }</ListGroupItem>
-//                     <ListGroupItem>Service Rating: { props.serviceRating }</ListGroupItem>
-//                     <Button href='/ratings/edit'>Update</Button>
-//                 </ListGroup>
-//             </Card>    
-//         </div>
-//     )
-
-// }
-
-// export default RatingCard

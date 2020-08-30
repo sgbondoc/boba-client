@@ -14,14 +14,14 @@ class BobaList extends Component {
     }
 
     componentDidMount() {
-        this.getBusinessList('San Francisco')
+        this.getBobaList('San Francisco')
     }
 
     componentDidUpdate (prevProps, prevState) {
         if (this.props.searchLocationQuery !== prevProps.searchLocationQuery) {
             this.setState({
                 results: [],
-            }, () => this.getBusinessList(this.props.searchLocationQuery))
+            }, () => this.getBobaList(this.props.searchLocationQuery))
         }
     }
 
@@ -31,12 +31,13 @@ class BobaList extends Component {
     yelpSearchUrl = "https://api.yelp.com/v3/businesses/search?location="
 
     // request to yelp api based on location search and category endpoints
-    getBusinessList = (locationSearched) => {
+    getBobaList = (locationSearched) => {
         this.setState({ loading: true })
         axios.get(`${this.corsAnywhereUrl}${this.yelpSearchUrl}${locationSearched}`, {
             headers: { "Authorization": `Bearer ${process.env.REACT_APP_API_KEY}`},
             params: { categories: 'bubbletea' }
         })
+
         .then((response) => {
             console.log(response.data.businesses)
             this.setState({
@@ -44,6 +45,7 @@ class BobaList extends Component {
                 loading: false
             })
         })
+        
         .catch((err) => {
             this.setState({ 
                 errorState: "Sorry there is no related information to the location you searched.",

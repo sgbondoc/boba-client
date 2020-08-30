@@ -8,7 +8,7 @@ import {
 
 class LikeButton extends Component {
     state = {
-        drink: "",
+        drink: '',
         likes: 0
     }
 
@@ -23,20 +23,10 @@ class LikeButton extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        console.log(this.state, 'handleSubmit, this.state')
-
         let rating = this.state
-        console.log(rating, 'handleSubmit, rating')
-
-        console.log(this.props, 'handleSubmit, this.props')
-        console.log(this.props._id, 'handleSubmit, this.props')
 
         DrinkModel.update(this.props._id, rating)
             .then(data => {
-                // console.log(data)
-                // let rating = data.rating
-                console.log(rating, 'data ratings')
-                
                 this.props.history.push('/drinks')
             })    
     }
@@ -44,9 +34,6 @@ class LikeButton extends Component {
     increaseLikes = (event) => {
         let updateCount = this.state.likes + 1
         this.setState({ likes: updateCount })
-
-        console.log(this.state, "state, button")
-        console.log(this.props, "props, button")
     }
 
     render () {

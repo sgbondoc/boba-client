@@ -3,7 +3,7 @@ import { Form, FormGroup, Input, Button } from 'reactstrap'
 
 class DrinkListForm extends Component {
     state = {
-        drink: ""
+        drink: ''
     }
 
     handleChange = (event) => {
@@ -17,9 +17,8 @@ class DrinkListForm extends Component {
         let drink = this.state
         this.props.createDrink(drink)
         this.setState({
-            drink: ""
+            drink: ''
         })
-        console.log("drinklist form done")
     }
 
     render() {
