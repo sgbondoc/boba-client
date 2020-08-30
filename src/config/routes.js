@@ -9,7 +9,6 @@ import Search from '../pages/Search'
 import DrinkList from '../pages/DrinkList'
 
 // imports for auth
-import Profile from '../pages/Profile'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
 
@@ -21,7 +20,6 @@ export default (props) => (
         <Route path='/ratings' component={ RatingList }/>
         <Route path='/search' component={ Search }/>
         <Route path='/drinks' component={ DrinkList }/>
-        <Route path='/profile' component={ Profile }/>
         <Route path='/register' component={ Register }/>
         <Route path='/login' render={ (routeComponentProps) => {
             return <Login

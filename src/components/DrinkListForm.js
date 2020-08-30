@@ -13,7 +13,7 @@ class DrinkListForm extends Component {
         })
     }
 
-    handleSubmit = (event, form) => {
+    handleSubmit = (event ) => {
         event.preventDefault()
         let drink = this.state
         this.props.createDrink(drink)
@@ -26,7 +26,6 @@ class DrinkListForm extends Component {
         this.setState({
             drink: ""
         })
-        form.reset()
         console.log("drinklist form done")
     }
 
