@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import DrinkModel from '../models/drink'
 import DrinkListForm from '../components/DrinkListForm'
-import LikeButton from '../components/LikeButton'
-import { Card, CardText, CardBody,CardTitle } from 'reactstrap'
+import { Card , CardBody,CardTitle, CardSubtitle } from 'reactstrap'
+import Button from 'reactstrap/lib/Button'
+import CardText from 'reactstrap/lib/CardText'
 
 class DrinkList extends Component {
     state = {
@@ -37,13 +39,16 @@ class DrinkList extends Component {
             return (
                 <div className="drink-container" key={ index }>
                     <div className="drink">
+                        <Link to={`/drinks/${ drink._id }`}>
                         <Card style={{ width: '18rem' }}>
                             <CardBody>
                                 <CardTitle tag="h6">{ drink.drink }</CardTitle>
-                                <CardText>Likes: { this.state.likes }</CardText>
-                                <LikeButton />
+                                <CardText>Likes: { drink.likes }</CardText>
+                                { " " }
+                                <Button>Edit</Button>
                             </CardBody>
                         </Card>
+                    </Link>
                     </div>
                 </div>
             )

@@ -7,6 +7,7 @@ import RatingShow from '../pages/RatingShow'
 import NewRating from '../pages/NewRating'
 import Search from '../pages/Search'
 import DrinkList from '../pages/DrinkList'
+import DrinkShow from '../pages/DrinkShow'
 
 // imports for auth
 import Login from '../pages/Login'
@@ -19,6 +20,7 @@ export default (props) => (
         <Route path='/ratings/:id' component={ RatingShow }/>
         <Route path='/ratings' component={ RatingList }/>
         <Route path='/search' component={ Search }/>
+        <Route path='/drinks/:id' component={ DrinkShow }/>
         <Route path='/drinks' component={ DrinkList }/>
         <Route path='/register' component={ Register }/>
         <Route path='/login' render={ (routeComponentProps) => {

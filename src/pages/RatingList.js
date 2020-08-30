@@ -50,7 +50,6 @@ class RatingList extends Component {
         return (
             <>
             <h4>Ratings</h4>
-            {/* <FilterContainer location={ this.state.ratings.location } /> */}
             <div className="rating-gallery">{ RatingList }</div>
             </>
         )

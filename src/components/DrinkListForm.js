@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import DrinkModel from '../models/drink'
 import { Form, FormGroup, Input, Button } from 'reactstrap'
 
 class DrinkListForm extends Component {
@@ -17,12 +16,6 @@ class DrinkListForm extends Component {
         event.preventDefault()
         let drink = this.state
         this.props.createDrink(drink)
-        // DrinkModel.create(drink)
-        //     .then(data => {
-        //         console.log(data)
-        //         this.props.history.push('/drinks')
-        //         console.log("drink created")
-        //     })
         this.setState({
             drink: ""
         })
@@ -40,7 +33,7 @@ class DrinkListForm extends Component {
                                 id="drinkSuggestion"
                                 placeholder="Suggest a drink..."
                                 onChange={ this.handleChange }
-                                value={ this.state.suggestedDrink }
+                                value={ this.state.drink }
                             />
                             <Button 
                                 type="submit" 
