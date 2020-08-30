@@ -6,7 +6,7 @@ import {
     Button, Input
 } from 'reactstrap'
 
-class LikeButton extends Component {
+class DrinkCard extends Component {
     state = {
         drink: '',
         likes: 0
@@ -70,4 +70,4 @@ class LikeButton extends Component {
     }
 }
 
-export default LikeButton
+export default DrinkCard

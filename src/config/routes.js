@@ -12,6 +12,7 @@ import DrinkShow from '../pages/DrinkShow'
 // imports for auth
 import Login from '../pages/Login'
 import Register from '../pages/Register'
+import UserShow from '../pages/UserShow'
 
 export default (props) => (
     <Switch>
@@ -22,6 +23,7 @@ export default (props) => (
         <Route path='/search' component={ Search }/>
         <Route path='/drinks/:id' component={ DrinkShow }/>
         <Route path='/drinks' component={ DrinkList }/>
+        <Route path='/profile' component={ UserShow }/>
         <Route path='/register' component={ Register }/>
         <Route path='/login' render={ (routeComponentProps) => {
             return <Login
