@@ -39,8 +39,8 @@ class RatingCard extends Component {
 
         RatingModel.update(this.props._id, rating)
             .then(data => {
-                console.log(data)
-                let rating = data.rating
+                // console.log(data)
+                // let rating = data.rating
                 console.log(rating, 'data ratings')
                 
                 this.props.history.push('/ratings')

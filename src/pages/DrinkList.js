@@ -16,8 +16,20 @@ class DrinkList extends Component {
     fetchData = () => {
         DrinkModel.all().then((data) => {
             this.setState ({ drinks: data.drinks })
-            console.log(this.state.drinks)
+            console.log(this.state.drinks, "this.state.drinks from drinklist")
         })    
+    }
+
+    createDrink = (drink) => {
+        DrinkModel.create(drink)
+            .then(data => {
+                let drinks = this.state.drinks
+                drinks.push(drink)
+                console.log(data, "drink")
+                console.log("drink created")
+                this.setState({ drinks: drinks })
+                console.log("setState done")
+            })
     }
 
     render () {
@@ -42,7 +54,8 @@ class DrinkList extends Component {
             <h4>Drink Now</h4>
             <div className="drinks">
                 <DrinkListForm 
-                {...this.props}/>
+                { ...this.props }
+                createDrink={ this.createDrink }/>
             </div>    
             <div className="drinks-gallery">{ DrinksList }</div>
             </>

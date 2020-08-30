@@ -4,27 +4,30 @@ import { Form, FormGroup, Input, Button } from 'reactstrap'
 
 class DrinkListForm extends Component {
     state = {
-        drink: "",
-        drinks: []
+        drink: ""
     }
 
     handleChange = (event) => {
         this.setState({
             drink: event.target.value
         })
-        console.log(event.target.value)
-        console.log(this.state.drink)
     }
 
-    handleSubmit = (event) => {
-        console.log(this.state)
-        DrinkModel.create(this.state)
-            .then(data => {
-                this.props.history.push('/drinks')
-            })
+    handleSubmit = (event, form) => {
+        event.preventDefault()
+        let drink = this.state
+        this.props.createDrink(drink)
+        // DrinkModel.create(drink)
+        //     .then(data => {
+        //         console.log(data)
+        //         this.props.history.push('/drinks')
+        //         console.log("drink created")
+        //     })
         this.setState({
             drink: ""
-        })    
+        })
+        form.reset()
+        console.log("drinklist form done")
     }
 
     render() {

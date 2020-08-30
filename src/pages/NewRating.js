@@ -28,6 +28,7 @@ class NewRating extends Component {
         event.preventDefault()
         RatingModel.create(this.state)
             .then(data => {
+                console.log(this.props)
                 this.props.history.push('/ratings')
             })
     }
