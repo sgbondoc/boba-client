@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import RatingModel from '../models/rating'
 import {
     Card, CardText, CardBody,
-    CardTitle, Button
+    CardTitle, Button, CardImg
 } from 'reactstrap'
 
 class RatingList extends Component {
@@ -34,6 +34,11 @@ class RatingList extends Component {
                                 <CardText>Location: { rating.location }</CardText>
                                 <CardText>Drink: { rating.drink }</CardText>
                                 <CardText>Overall Rating: { rating.overallRating }</CardText>
+                                <span>
+                                <CardImg 
+                                    className="user-stars"
+                                    src = {require(`../images/yelp stars/${rating.overallRating}.png`)}/>
+                                </span>
                                 <CardText>Drinks Rating: { rating.overallRating }</CardText>
                                 <CardText>Toppings Rating: { rating.overallRating }</CardText>
                                 <CardText>Snacks Rating: { rating.overallRating }</CardText>

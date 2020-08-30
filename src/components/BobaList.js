@@ -72,6 +72,12 @@ class BobaList extends Component {
                                 <CardSubtitle>{ result.location.display_address[0] },{" "} 
                                     { result.location.display_address[1] }</CardSubtitle>
                                 <CardText>Yelp Rating: { result.rating } </CardText>
+                                <CardImg 
+                                    className = "businessInfo-rating"
+                                    src = {require(`../images/yelp stars/${result.rating}.png`)}
+                                    alt = {`Yelp ratings: ${result.rating}/5`}
+                                />
+                                <CardText>{result.review_count} Reviews</CardText>
                                 <Button href={ result.url }>View on Yelp</Button>
                             </CardBody>
                         </Card>

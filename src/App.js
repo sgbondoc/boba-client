@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 import Routes from './config/routes'
 import Header from './components/Header'
 import UserModel from './models/user'
+
 // import Dots from './components/Dots'
 import './App.css'
 
@@ -59,7 +60,5 @@ function App (props) {
 //     return <div className="loading-box">{child}</div>;
 //   })
 // }
-
-
 
 export default withRouter(App)

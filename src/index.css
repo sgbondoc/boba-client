@@ -106,13 +106,6 @@ ul {
   padding-top: 20px;
 }
 
-/* img.card-img-top {
-  width: 318px;
-  height: 180px;
-} */
-
-/* .business-info {
-  padding: 50px;
-  width: 288px;
-  height: 580px
-} */
+.user-stars {
+  padding-bottom: 15px;
+}
