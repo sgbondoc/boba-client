@@ -2,7 +2,7 @@ const url = process.env.REACT_APP_API_URL || 'http://localhost:4000/api/v1'
 
 export default class UserModel {
     static async create(data) {
-        const response = await fetch(`${url}auth/register`, {
+        const response = await fetch(`${url}/auth/register`, {
             method: "POST",
             headers: { "Content-Type": "application/json"},
             body: JSON.stringify(data)
@@ -11,7 +11,7 @@ export default class UserModel {
     }
     static async login(credentials) {
         // remember to add "credentials: include"
-        const response = await fetch(`${url}auth/login`, {
+        const response = await fetch(`${url}/auth/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",
@@ -21,7 +21,7 @@ export default class UserModel {
     }
     static async logout() {
     // remember to add "credentials: include"
-    const response = await fetch(`${url}auth/logout`, {
+    const response = await fetch(`${url}/auth/logout`, {
             method: "DELETE",
             credentials: "include",
         })
