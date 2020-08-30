@@ -18,7 +18,6 @@ class RatingList extends Component {
     fetchData = () => {
         RatingModel.all().then((data) => {
             this.setState({ ratings: data.ratings })
-            console.log(this.state.ratings)
         })
     }
 

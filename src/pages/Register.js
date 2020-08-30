@@ -8,16 +8,17 @@ import {
 
 class Register extends Component {
     state = {
-        name: "",
-        email: "",
-        password: "",
-        password2: ""
+        name: '',
+        email: '',
+        password: '',
+        password2: ''
     }
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         })
     }
+
     handleSubmit = (event) => {
         event.preventDefault()
         if (this.state.password !== this.state.password2) return false
@@ -25,14 +26,15 @@ class Register extends Component {
             .then(data => {
                 console.log(data)
                 this.setState({
-                    name: "",
-                    email: "",
-                    password: "",
-                    password2: ""
+                    name: '',
+                    email: '',
+                    password: '',
+                    password2: ''
                 })
                 this.props.history.push('/login')
             })
     }
+    
     render() {
         return (
             <Container className="register">

@@ -3,7 +3,7 @@ import { Button, Form, FormGroup, Input } from 'reactstrap'
 
 class SearchForm extends Component {
     state = {
-        searchLocationQuery: ""
+        searchLocationQuery: ''
     }
 
     handleChange = (event) => {

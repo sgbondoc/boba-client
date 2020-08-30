@@ -22,8 +22,8 @@ class RatingShow extends Component {
         return (
             <div>
                 <RatingCard 
-                {...this.props}
-                {...this.state.rating}/>
+                { ...this.props }
+                { ...this.state.rating }/>
             </div>
         )
     }

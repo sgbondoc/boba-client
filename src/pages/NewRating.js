@@ -8,14 +8,14 @@ import {
 
 class NewRating extends Component {
     state = {
-        businessName: "",
-        location: "",
-        drink: "",
-        overallRating: "",
-        drinksRating: "",
-        toppingsRating: "",
-        snacksRating: "",
-        serviceRating: "",
+        businessName: '',
+        location: '',
+        drink: '',
+        overallRating: '',
+        drinksRating: '',
+        toppingsRating: '',
+        snacksRating: '',
+        serviceRating: ''
     }
 
     handleChange = (event) => {
@@ -28,7 +28,6 @@ class NewRating extends Component {
         event.preventDefault()
         RatingModel.create(this.state)
             .then(data => {
-                console.log(this.props)
                 this.props.history.push('/ratings')
             })
     }
