@@ -2,14 +2,15 @@ import React, { Component } from 'react'
 import SearchForm from '../components/SearchForm'
 import BobaList from '../components/BobaList'
 
+// search page : form and list
 class Search extends Component {
     state = {
-        searchLocationQuery: null
+        searchLocationTerms: null
     }
 
-    onFormSubmit = (searchLocationQuery) => {
+    onFormSubmit = (searchLocationTerms) => {
         this.setState({
-            searchLocationQuery: searchLocationQuery
+            searchLocationTerms: searchLocationTerms
         })
     }
 
@@ -21,7 +22,7 @@ class Search extends Component {
             </div>
             <div>
             <BobaList
-                searchLocationQuery={ this.state.searchLocationQuery }/>
+                searchLocationTerms={ this.state.searchLocationTerms }/>
             </div>
             </>
         )

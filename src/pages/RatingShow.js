@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import RatingModel from '../models/rating'
 import RatingCard from '../components/RatingCard'
 
+// ratings page : list, new, show, card
 class RatingShow extends Component {
     state = {
         rating: {},

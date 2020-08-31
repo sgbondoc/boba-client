@@ -4,8 +4,8 @@ import DrinkModel from '../models/drink'
 import DrinkListForm from '../components/DrinkListForm'
 import { Card , CardBody, CardTitle } from 'reactstrap'
 import Button from 'reactstrap/lib/Button'
-import CardText from 'reactstrap/lib/CardText'
 
+// drinks page: form, list, show, card
 class DrinkList extends Component {
     state = {
         drinks: []
@@ -39,8 +39,6 @@ class DrinkList extends Component {
                         <Card style={{ width: '18rem' }}>
                             <CardBody>
                                 <CardTitle tag="h6">{ drink.drink }</CardTitle>
-                                <CardText>Likes: { drink.likes }</CardText>
-                                { " " }
                                 <Button>Edit</Button>
                             </CardBody>
                         </Card>

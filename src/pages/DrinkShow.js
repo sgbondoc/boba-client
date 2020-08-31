@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import DrinkModel from '../models/drink'
 import DrinkCard from '../components/DrinkCard'
 
+// drinks page: form, list, show, card
 class DrinkShow extends Component {
     state = {
         drink: {},

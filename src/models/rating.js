@@ -23,6 +23,11 @@ class RatingModel {
         return await response.json()
     }
 
+    static delete = async (ratingId) => {
+        const response = await fetch(`${url}/ratings/${ratingId}`)
+        return await response.json()
+    }
+
     static update = async (ratingId, rating) => {
         const response = await fetch(`${url}/ratings/${ratingId}`, {
             method: "PUT",

@@ -6,6 +6,7 @@ import {
     CardTitle, Button, CardImg
 } from 'reactstrap'
 
+// ratings page : list, new, show, card
 class RatingList extends Component {
     state = {
         ratings: []
@@ -33,15 +34,15 @@ class RatingList extends Component {
                                 <CardText>Location: { rating.location }</CardText>
                                 <CardText>Drink: { rating.drink }</CardText>
                                 <CardText>Overall Rating: { rating.overallRating }</CardText>
-                                <span>
+                                <div>
                                 <CardImg 
                                     className="user-stars"
                                     src = {require(`../images/yelp stars/${rating.overallRating}.png`)}/>
-                                </span>
-                                <CardText>Drinks Rating: { rating.overallRating }</CardText>
-                                <CardText>Toppings Rating: { rating.overallRating }</CardText>
-                                <CardText>Snacks Rating: { rating.overallRating }</CardText>
-                                <CardText>Service Rating: { rating.overallRating }</CardText>
+                                </div>
+                                <CardText>Drinks Rating: { rating.drinksRating }</CardText>
+                                <CardText>Toppings Rating: { rating.toppingsRating }</CardText>
+                                <CardText>Snacks Rating: { rating.snacksRating }</CardText>
+                                <CardText>Service Rating: { rating.serviceRating }</CardText>
                                 <Button>Edit</Button>
                             </CardBody>
                         </Card>

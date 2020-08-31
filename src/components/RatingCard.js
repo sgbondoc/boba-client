@@ -6,6 +6,7 @@ import {
     Button, Input
 } from 'reactstrap'
 
+// ratings page : list, new, show, card
 class RatingCard extends Component {
     state = {
         businessName: '',

@@ -6,6 +6,7 @@ import {
     Button, Input
 } from 'reactstrap'
 
+// drinks page: form, list, show, card
 class DrinkCard extends Component {
     state = {
         drink: '',
@@ -31,11 +32,6 @@ class DrinkCard extends Component {
             })    
     }
 
-    increaseLikes = (event) => {
-        let updateCount = this.state.likes + 1
-        this.setState({ likes: updateCount })
-    }
-
     render () {
         return (
             <Container className="edit-drink">
@@ -56,13 +52,7 @@ class DrinkCard extends Component {
                                 </div>
                             </FormGroup>
                         </Col>
-                        <Col>
-                            <FormGroup>
-                                    <Button onClick={ this.increaseLikes }>Add Likes</Button>
-                                    { " " }
-                                    <Button type="submit">Update</Button>
-                            </FormGroup>
-                        </Col>
+                        <Button type="submit">Update</Button>
                     </Form>
                 </form>
             </Container> 

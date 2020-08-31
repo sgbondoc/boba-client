@@ -1,20 +1,21 @@
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Input } from 'reactstrap'
 
+// search page : form and list
 class SearchForm extends Component {
     state = {
-        searchLocationQuery: ''
+        searchLocationTerms: ''
     }
 
     handleChange = (event) => {
         this.setState({
-            searchLocationQuery: event.target.value
+            searchLocationTerms: event.target.value
         })
     }
     
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.onFormSubmit(this.state.searchLocationQuery)
+        this.props.onFormSubmit(this.state.searchLocationTerms)
     }
 
     render() {
@@ -28,7 +29,7 @@ class SearchForm extends Component {
                                 type="text"
                                 id="location"
                                 placeholder="Location"
-                                value={ this.state.searchLocationQuery }
+                                value={ this.state.searchLocationTerms }
                                 onChange={ this.handleChange }>
                             </Input>
                         </FormGroup>      

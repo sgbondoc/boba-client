@@ -8,8 +8,8 @@ import {
 
 class Login extends Component {
     state = {
-        email: "",
-        password: ""
+        email: '',
+        password: ''
     }
 
     handleChange = (event) => {
@@ -22,13 +22,10 @@ class Login extends Component {
         event.preventDefault()
         UserModel.login(this.state)
         .then(data => {
-            console.log(data)
-            // TODO: FIX IT (reload page, reload component, message to let user know)
             if (!data.user) {
                 return false
             }
             this.props.storeUser(data.user)
-            console.log(data.user)
             this.props.history.push('/ratings')
         })
         .catch(err => console.log(err))

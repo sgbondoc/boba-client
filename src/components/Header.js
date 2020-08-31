@@ -30,9 +30,6 @@ const Header = (props) => {
                                     <NavLink href="/drinks">Drink Now</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="/profile">Profile</NavLink>
-                                </NavItem>
-                                <NavItem>
                                     <NavLink href="/logout" onClick={ props.logout }>Logout</NavLink>
                                 </NavItem>
                             </>    

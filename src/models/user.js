@@ -11,7 +11,6 @@ export default class UserModel {
         return await response.json()
     }
     static async login(credentials) {
-        // remember to add "credentials: include"
         const response = await fetch(`${url}/auth/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -21,7 +20,6 @@ export default class UserModel {
          return await response.json()
     }
     static async logout() {
-        // remember to add "credentials: include"
         const response = await fetch(`${url}/auth/logout`, {
                 method: "DELETE",
                 credentials: "include",

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Form, FormGroup, Input, Button } from 'reactstrap'
 
+// drinks page: form, list, show, card
 class DrinkListForm extends Component {
     state = {
         drink: ''

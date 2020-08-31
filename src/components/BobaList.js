@@ -1,4 +1,3 @@
-// imports
 import React, { Component } from 'react'
 import axios from 'axios'
 import {
@@ -6,11 +5,10 @@ import {
     CardTitle, CardSubtitle, Button
 } from 'reactstrap'
 
+// search page : form and list
 class BobaList extends Component {
     state = {
-        results: [],
-        errorState: null,
-        loading: false
+        results: []
     }
 
     componentDidMount() {
@@ -18,10 +16,11 @@ class BobaList extends Component {
     }
 
     componentDidUpdate (prevProps, prevState) {
-        if (this.props.searchLocationQuery !== prevProps.searchLocationQuery) {
+        if (this.props.searchLocationTerms !== prevProps.searchLocationTerms) {
             this.setState({
-                results: [],
-            }, () => this.getBobaList(this.props.searchLocationQuery))
+                results: []
+            })
+            this.getBobaList(this.props.searchLocationTerms)
         }
     }
 
@@ -31,35 +30,18 @@ class BobaList extends Component {
     yelpSearchUrl = "https://api.yelp.com/v3/businesses/search?location="
 
     // request to yelp api based on location search and category endpoints
-    getBobaList = (locationSearched) => {
-        this.setState({ loading: true })
-        axios.get(`${this.corsAnywhereUrl}${this.yelpSearchUrl}${locationSearched}`, {
+    getBobaList = (locationSearchTerms) => {
+        axios.get(`${this.corsAnywhereUrl}${this.yelpSearchUrl}${locationSearchTerms}`, {
             headers: { "Authorization": `Bearer ${process.env.REACT_APP_API_KEY}` },
             params: { categories: 'bubbletea' }
         })
 
         .then((response) => {
-            console.log(response.data.businesses)
             this.setState({
                 results: response.data.businesses, 
                 loading: false
             })
         })
-        
-        .catch((err) => {
-            this.setState({ 
-                errorState: "Sorry there is no related information to the location you searched.",
-                loading: false
-            })
-        })
-    }
-
-    renderEmptyState = () => {
-        return (
-            <h4 className="header-message">
-                "Working on getting your boba list!"
-            </h4>
-        )
     }
 
     renderBusinessInfo = () => {
@@ -72,7 +54,9 @@ class BobaList extends Component {
                             <CardBody>
                                 <CardTitle>{ result.name }</CardTitle>
                                 <CardSubtitle>{ result.location.display_address[0] },{" "} 
-                                    { result.location.display_address[1] }</CardSubtitle>
+                                    { result.location.display_address[1] },{" "}
+                                    { result.location.display_address[2] }
+                                    </CardSubtitle>
                                 <CardText>Yelp Rating: { result.rating } </CardText>
                                 <CardImg 
                                     className = "businessInfo-rating"
@@ -95,12 +79,7 @@ class BobaList extends Component {
 
     render () {
         return (
-            <div className="business-container">
-                { this.state.results.length ? this.renderBusinessInfo() : this.renderEmptyState }
-                { !!this.state.errorState && 
-                    <h1>{ this.state.error }</h1>
-                }
-            </div>
+            <div className="business-container">{ this.renderBusinessInfo() }</div>
         )
     }
 }
