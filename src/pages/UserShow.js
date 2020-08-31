@@ -5,7 +5,7 @@ import UserCard from '../components/UserCard'
 class UserShow extends Component {
     state = {
         user: {},
-        currentUser: this.props.match.params.id
+        currentUser: this.props.currentUser
     }
 
     componentDidMount() {

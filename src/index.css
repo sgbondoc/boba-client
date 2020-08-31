@@ -5,10 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('images/background.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: fill;
+  background: rgb(250,172,168);
+  background: radial-gradient(circle, rgba(250,172,168,1) 0%, rgba(221,214,243,1) 100%);
 }
 
 .container {
@@ -38,6 +36,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.homepage {
+  padding-top: 20px;
 }
 
 nav {

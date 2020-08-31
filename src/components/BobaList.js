@@ -34,7 +34,7 @@ class BobaList extends Component {
     getBobaList = (locationSearched) => {
         this.setState({ loading: true })
         axios.get(`${this.corsAnywhereUrl}${this.yelpSearchUrl}${locationSearched}`, {
-            headers: { "Authorization": `Bearer ${process.env.REACT_APP_API_KEY}`},
+            headers: { "Authorization": `Bearer ${process.env.REACT_APP_API_KEY}` },
             params: { categories: 'bubbletea' }
         })
 
@@ -76,10 +76,10 @@ class BobaList extends Component {
                                 <CardText>Yelp Rating: { result.rating } </CardText>
                                 <CardImg 
                                     className = "businessInfo-rating"
-                                    src = {require(`../images/yelp stars/${result.rating}.png`)}
-                                    alt = {`Yelp ratings: ${result.rating}/5`}
+                                    src = { require(`../images/yelp stars/${result.rating}.png`) }
+                                    alt = { `Yelp ratings: ${result.rating}/5` }
                                 />
-                                <CardText>{result.review_count} Reviews</CardText>
+                                <CardText>{ result.review_count } Reviews</CardText>
                                 <Button href={ result.url }>View on Yelp</Button>
                             </CardBody>
                         </Card>
