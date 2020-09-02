@@ -34,11 +34,13 @@ class RatingList extends Component {
                                 <CardText>Location: { rating.location }</CardText>
                                 <CardText>Drink: { rating.drink }</CardText>
                                 <CardText>Overall Rating: { rating.overallRating }</CardText>
-                                <div>
+                                
                                 <CardImg 
                                     className="user-stars"
-                                    src = {require(`../images/yelp stars/${rating.overallRating}.png`)}/>
-                                </div>
+                                    src = { require(`../images/yelp stars/${rating.overallRating}.png`) }
+                                    alt = { `Yelp ratings: ${rating.OverallRating}/5` }    
+                                />
+            
                                 <CardText>Drinks Rating: { rating.drinksRating }</CardText>
                                 <CardText>Toppings Rating: { rating.toppingsRating }</CardText>
                                 <CardText>Snacks Rating: { rating.snacksRating }</CardText>
@@ -54,7 +56,7 @@ class RatingList extends Component {
 
         return (
             <>
-            <h4>Ratings</h4>
+            <h4>Boba Community Ratings</h4>
             <div className="rating-gallery">{ RatingList }</div>
             </>
         )

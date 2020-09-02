@@ -27,6 +27,7 @@ class DrinkList extends Component {
                 let drinks = this.state.drinks
                 drinks.push(drink)
                 this.setState({ drinks: drinks })
+                this.props.history.push('/drinks')
             })
     }
 
