@@ -5,7 +5,7 @@ import {
     CardTitle, CardSubtitle, Button
 } from 'reactstrap'
 
-// search page : form and list
+// search page: form and list
 class BobaList extends Component {
     state = {
         results: []
@@ -15,7 +15,7 @@ class BobaList extends Component {
         this.getBobaList('San Francisco')
     }
 
-    componentDidUpdate (prevProps, prevState) {
+    componentDidUpdate (prevProps) {
         if (this.props.searchLocationTerms !== prevProps.searchLocationTerms) {
             this.setState({
                 results: []
@@ -38,9 +38,12 @@ class BobaList extends Component {
 
         .then((response) => {
             this.setState({
-                results: response.data.businesses, 
-                loading: false
+                results: response.data.businesses
             })
+        })
+
+        .catch((error) => {
+            console.log(error)
         })
     }
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Input } from 'reactstrap'
 
-// search page : form and list
+// search page: form and list
 class SearchForm extends Component {
     state = {
         searchLocationTerms: ''

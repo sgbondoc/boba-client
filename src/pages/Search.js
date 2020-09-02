@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import SearchForm from '../components/SearchForm'
 import BobaList from '../components/BobaList'
 
-// search page : form and list
+// search page: form and list
 class Search extends Component {
     state = {
         searchLocationTerms: null
