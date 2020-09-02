@@ -28,20 +28,4 @@ export default class UserModel {
         })
         return await response.json()
     }
-
-    static show = async (userId) => {
-        const response = await fetch(`${url}/auth/${userId}`)
-        return await response.json()
-    }
-
-    static update = async (userId, user) => {
-        const response = await fetch(`${url}/auth/${userId}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(user)
-        })
-        return await response.json()
-    }
 }
