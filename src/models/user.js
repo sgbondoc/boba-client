@@ -10,6 +10,7 @@ export default class UserModel {
         })
         return await response.json()
     }
+
     static async login(credentials) {
         const response = await fetch(`${url}/auth/login`, {
             method: "POST",
@@ -19,6 +20,7 @@ export default class UserModel {
          })
          return await response.json()
     }
+    
     static async logout() {
         const response = await fetch(`${url}/auth/logout`, {
                 method: "DELETE",
