@@ -35,6 +35,8 @@ class DrinkListForm extends Component {
                                 onChange={ this.handleChange }
                                 value={ this.state.drink }
                             />
+                        </FormGroup>
+                        <FormGroup>
                             <Button 
                                 type="submit" 
                                 id="addDrink" 
